@@ -1,0 +1,1401 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Web Crawler &#8212; My sample book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Markdown Files" href="markdown.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Web Crawler
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown.html">
+   Markdown Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks.html">
+   Content with notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown-notebooks.html">
+   Notebooks with MyST Markdown
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/intro.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/intro.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Web Crawler
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definisi">
+     Definisi
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implementasi-dalam-program">
+     Implementasi dalam program
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#penjelasan-dari-code-diatas-sebagai-berikut">
+     Penjelasan dari code diatas sebagai berikut.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#menghilangkan-kolom-kosong-setelah-crawling">
+     Menghilangkan Kolom Kosong setelah crawling
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pre-processing-data">
+   Pre-Processing Data
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implementasi-dalam-program-beserta-penjelasannya">
+     Implementasi dalam program beserta penjelasannya
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#klustering-menggunakan-k-means">
+     Klustering menggunakan K-Means
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#latent-semantic-analysis-lsa">
+   Latent Semantic Analysis (LSA)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Definisi
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Implementasi Dalam Program
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Web Crawler</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Web Crawler
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definisi">
+     Definisi
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implementasi-dalam-program">
+     Implementasi dalam program
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#penjelasan-dari-code-diatas-sebagai-berikut">
+     Penjelasan dari code diatas sebagai berikut.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#menghilangkan-kolom-kosong-setelah-crawling">
+     Menghilangkan Kolom Kosong setelah crawling
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pre-processing-data">
+   Pre-Processing Data
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implementasi-dalam-program-beserta-penjelasannya">
+     Implementasi dalam program beserta penjelasannya
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#klustering-menggunakan-k-means">
+     Klustering menggunakan K-Means
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#latent-semantic-analysis-lsa">
+   Latent Semantic Analysis (LSA)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Definisi
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Implementasi Dalam Program
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="web-crawler">
+<h1>Web Crawler<a class="headerlink" href="#web-crawler" title="Permalink to this headline">#</a></h1>
+<section id="definisi">
+<h2>Definisi<a class="headerlink" href="#definisi" title="Permalink to this headline">#</a></h2>
+<p>Sebelum mengatuhui tentang Web Crawler kita harus mengatahui definisi tentang web scraping. Web Scraping yang bisa disebut juga web harvesting, web data extraction atau web mining, yaitu kegiatan mengkonstruksi agen untuk mengunduh, mengurai,dan mengatur data dari halaman web secara otomatis. Hal ini dimaksudkan kegiatan pengguna dalam mengambil data dari layar web dilakukan oleh web scraper dengan tujuan agar pengambilan data dapat dilakukan dengan lebih cepat dan lebih tepat.</p>
+<p>Sedangkan, Web crawler merupakan kegiatan melintasi halaman-halaman web untuk diekstraksi oleh Web scraping. Saat pengambilan data dari halaman web, cukup sulit untuk menentukan halaman web yang cukup relevan. Dengan web crawler, pengunjungan halaman web dapat menggunakan local search algorithm untuk membatasi URL antara halaman web.</p>
+</section>
+<section id="implementasi-dalam-program">
+<h2>Implementasi dalam program<a class="headerlink" href="#implementasi-dalam-program" title="Permalink to this headline">#</a></h2>
+<p>Dalam contoh ini kami menggunakan bahasa pemrograman python untuk melakukan web scraping dan web crawler pada halaman web <a class="reference external" href="https://pta.trunojoyo.ac.id/">https://pta.trunojoyo.ac.id/</a>, di bawah ini contoh programnya</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install scrapy
+<span class="kn">import</span> <span class="nn">scrapy</span>
+
+<span class="k">class</span> <span class="nc">QuotesSpider</span><span class="p">(</span><span class="n">scrapy</span><span class="o">.</span><span class="n">Spider</span><span class="p">):</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Crawling_Web&#39;</span>
+    <span class="c1"># allowed_domains = [&#39;https://pta.trunojoyo.ac.id/&#39;]</span>
+    <span class="n">start_urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://pta.trunojoyo.ac.id/&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;procesing:&quot;</span><span class="o">+</span><span class="n">response</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+        <span class="c1">#Extract data using css selectors</span>
+        <span class="n">title</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;#content_journal &gt; ul &gt; li &gt; div:nth-child(1) &gt; a::text&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">extract</span><span class="p">()</span>
+        <span class="n">abstrac</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;#content_journal &gt; ul &gt; li &gt; div:nth-child(3) &gt; div:nth-child(2) &gt; p::text&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">extract</span><span class="p">()</span>
+        <span class="n">author</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;#content_journal &gt; ul &gt; li &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; span::text&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">extract</span><span class="p">()</span>
+
+        <span class="n">row_data</span><span class="o">=</span><span class="nb">zip</span><span class="p">(</span><span class="n">title</span><span class="p">,</span><span class="n">abstrac</span><span class="p">,</span><span class="n">author</span><span class="p">)</span>
+
+        <span class="c1">#Making extracted data row wise</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">row_data</span><span class="p">:</span>
+            <span class="c1">#create a dictionary to store the scraped info</span>
+            <span class="n">scraped_info</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="c1">#key:value</span>
+                <span class="s1">&#39;page&#39;</span><span class="p">:</span><span class="n">response</span><span class="o">.</span><span class="n">url</span><span class="p">,</span>
+                <span class="s1">&#39;title&#39;</span> <span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="c1">#item[0] means product in the list and so on, index tells what value to assign</span>
+                <span class="s1">&#39;author&#39;</span> <span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+                <span class="s1">&#39;abstrac&#39;</span> <span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+            <span class="p">}</span>
+
+            <span class="c1">#yield or give the scraped info to scrapy</span>
+            <span class="k">yield</span> <span class="n">scraped_info</span>
+
+
+        <span class="n">NEXT_PAGE_SELECTOR</span> <span class="o">=</span> <span class="s1">&#39;#end &gt; ol &gt; li:nth-child(2) &gt; a::attr(href)&#39;</span>
+        <span class="n">next_page</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="n">NEXT_PAGE_SELECTOR</span><span class="p">)</span><span class="o">.</span><span class="n">extract_first</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">LAST_PAGE_SELECTOR</span> <span class="o">=</span> <span class="s1">&#39;#end &gt; ol &gt; li:nth-child(5) &gt; a::attr(href)&#39;</span>
+        <span class="k">if</span> <span class="n">next_page</span> <span class="o">==</span> <span class="s1">&#39;2&#39;</span><span class="p">:</span>
+            <span class="n">last_page</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="n">LAST_PAGE_SELECTOR</span><span class="p">)</span><span class="o">.</span><span class="n">extract_first</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">page</span> <span class="o">=</span> <span class="s1">&#39;https://pta.trunojoyo.ac.id/welcome/index/&#39;</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">last_page</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+                <span class="k">yield</span> <span class="n">scrapy</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">page</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">callback</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parse</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Defaulting to user installation because normal site-packages is not writeable
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scrapy in /home/said/.local/lib/python3.9/site-packages (2.6.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: itemadapter&gt;=0.1.0 in /home/said/.local/lib/python3.9/site-packages (from scrapy) (0.6.0)
+Requirement already satisfied: queuelib&gt;=1.4.2 in /home/said/.local/lib/python3.9/site-packages (from scrapy) (1.6.2)
+Requirement already satisfied: PyDispatcher&gt;=2.0.5 in /usr/lib/python3/dist-packages (from scrapy) (2.0.5)
+Requirement already satisfied: w3lib&gt;=1.17.0 in /home/said/.local/lib/python3.9/site-packages (from scrapy) (1.22.0)
+Requirement already satisfied: protego&gt;=0.1.15 in /home/said/.local/lib/python3.9/site-packages (from scrapy) (0.2.1)
+Requirement already satisfied: parsel&gt;=1.5.0 in /home/said/.local/lib/python3.9/site-packages (from scrapy) (1.6.0)
+Requirement already satisfied: cssselect&gt;=0.9.1 in /home/said/.local/lib/python3.9/site-packages (from scrapy) (1.1.0)
+Requirement already satisfied: zope.interface&gt;=4.1.3 in /usr/lib/python3/dist-packages (from scrapy) (5.4.0)
+Requirement already satisfied: itemloaders&gt;=1.0.1 in /home/said/.local/lib/python3.9/site-packages (from scrapy) (1.0.4)
+Requirement already satisfied: lxml&gt;=3.5.0 in /usr/lib/python3/dist-packages (from scrapy) (4.8.0)
+Requirement already satisfied: pyOpenSSL&gt;=16.2.0 in /usr/lib/python3/dist-packages (from scrapy) (21.0.0)
+Requirement already satisfied: service-identity&gt;=16.0.0 in /usr/lib/python3/dist-packages (from scrapy) (18.1.0)
+Requirement already satisfied: setuptools in /usr/lib/python3/dist-packages (from scrapy) (59.6.0)
+Requirement already satisfied: tldextract in /home/said/.local/lib/python3.9/site-packages (from scrapy) (3.3.0)
+Requirement already satisfied: Twisted&gt;=17.9.0 in /usr/lib/python3/dist-packages (from scrapy) (22.4.0)
+Requirement already satisfied: cryptography&gt;=2.0 in /usr/lib/python3/dist-packages (from scrapy) (3.4.8)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jmespath&gt;=0.9.5 in /home/said/.local/lib/python3.9/site-packages (from itemloaders&gt;=1.0.1-&gt;scrapy) (1.0.1)
+Requirement already satisfied: six&gt;=1.6.0 in /usr/lib/python3/dist-packages (from parsel&gt;=1.5.0-&gt;scrapy) (1.16.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: filelock&gt;=3.0.8 in /usr/lib/python3/dist-packages (from tldextract-&gt;scrapy) (3.6.0)
+Requirement already satisfied: idna in /usr/lib/python3/dist-packages (from tldextract-&gt;scrapy) (3.3)
+Requirement already satisfied: requests&gt;=2.1.0 in /usr/lib/python3/dist-packages (from tldextract-&gt;scrapy) (2.27.1)
+Requirement already satisfied: requests-file&gt;=1.4 in /usr/lib/python3/dist-packages (from tldextract-&gt;scrapy) (1.5.1)
+</pre></div>
+</div>
+</div>
+</div>
+<p>untuk menjalankan program tersebut kita masuk terminal kemudian masuk ke folder tempat file tersebut berada dan ketikkan program dibawah berikut.</p>
+<p><code> scrapy runspider nama_file.py -o data_hasil_crawling.csv </code></p>
+</section>
+<section id="penjelasan-dari-code-diatas-sebagai-berikut">
+<h2>Penjelasan dari code diatas sebagai berikut.<a class="headerlink" href="#penjelasan-dari-code-diatas-sebagai-berikut" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scrapy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>import terlebih dahulu library scrapy yang telah diinstall sebelumnya.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">QuotesSpider</span><span class="p">(</span><span class="n">scrapy</span><span class="o">.</span><span class="n">Spider</span><span class="p">):</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Crawling_Web&#39;</span>
+    <span class="c1"># allowed_domains = [&#39;https://pta.trunojoyo.ac.id/&#39;]</span>
+    <span class="n">start_urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://pta.trunojoyo.ac.id/&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/tmp/ipykernel_7694/996622202.py&quot;</span><span class="gt">, line </span><span class="mi">7</span>
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+                              <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block
+</pre></div>
+</div>
+</div>
+</div>
+<p>program diatas adalah default yang diberikan oleh dokumentasi di web library scrapy. dimana dibagian varibel name digunakan untuk menamai program tersebut. kemudian dibagian starts_urls yaitu memasukkan web yang akan di scarping dan crawling. kemudian dibagian function parse digunakan untuk menaruh program algoritma scarping dan crawling</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">title</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;#content_journal &gt; ul &gt; li &gt; div:nth-child(1) &gt; a::text&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">extract</span><span class="p">()</span>
+<span class="n">abstrac</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;#content_journal &gt; ul &gt; li &gt; div:nth-child(3) &gt; div:nth-child(2) &gt; p::text&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">extract</span><span class="p">()</span>
+<span class="n">author</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;#content_journal &gt; ul &gt; li &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; span::text&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">extract</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Kemudian program diatas yaitu mengambil sebuah data yang berupa teks sesuai element yang dimasukkan diatas dan pengambilannya mengunakan response css. untuk sementara yang diambil adalah bagian titile,abstac,dan author.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">row_data</span><span class="o">=</span><span class="nb">zip</span><span class="p">(</span><span class="n">title</span><span class="p">,</span><span class="n">abstrac</span><span class="p">,</span><span class="n">author</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>disini menaruh variabel title, abstac, dan author dalam satu variabel.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">row_data</span><span class="p">:</span>
+            <span class="c1">#create a dictionary to store the scraped info</span>
+            <span class="n">scraped_info</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="c1">#key:value</span>
+                <span class="s1">&#39;page&#39;</span><span class="p">:</span><span class="n">response</span><span class="o">.</span><span class="n">url</span><span class="p">,</span>
+                <span class="s1">&#39;title&#39;</span> <span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="c1">#item[0] means product in the list and so on, index tells what value to assign</span>
+                <span class="s1">&#39;author&#39;</span> <span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+                <span class="s1">&#39;abstrac&#39;</span> <span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+            <span class="p">}</span>
+
+            <span class="c1">#yield or give the scraped info to scrapy</span>
+            <span class="k">yield</span> <span class="n">scraped_info</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Kemudian masuk ke program diatas, disana untuk mengambil semua data dengan cara di looping dan ini masuk ke proses scraping.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>       <span class="n">NEXT_PAGE_SELECTOR</span> <span class="o">=</span> <span class="s1">&#39;#end &gt; ol &gt; li:nth-child(2) &gt; a::attr(href)&#39;</span>
+        <span class="n">next_page</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="n">NEXT_PAGE_SELECTOR</span><span class="p">)</span><span class="o">.</span><span class="n">extract_first</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">LAST_PAGE_SELECTOR</span> <span class="o">=</span> <span class="s1">&#39;#end &gt; ol &gt; li:nth-child(5) &gt; a::attr(href)&#39;</span>
+        <span class="k">if</span> <span class="n">next_page</span> <span class="o">==</span> <span class="s1">&#39;2&#39;</span><span class="p">:</span>
+            <span class="n">last_page</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="n">LAST_PAGE_SELECTOR</span><span class="p">)</span><span class="o">.</span><span class="n">extract_first</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">page</span> <span class="o">=</span> <span class="s1">&#39;https://pta.trunojoyo.ac.id/welcome/index/&#39;</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">last_page</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+                <span class="k">yield</span> <span class="n">scrapy</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">page</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">callback</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parse</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Kemudian masuk ke proses crawling yaitu beralih ke page selanjutnya dengan otomatis menggunakan program diatas. di bagian variabel NEXT_PAGE_SELECTOR digunakan untuk mengambil link tujuan button next page dengan cara mengambil attribut hrefnya saja yang nantniya akan digunakan di varibel next_page. Kemudian dibagian variabel next_page mengambil indexnya saja disini berada dibagian terakhir sebelum tanda garing dan cara tersebut berlaku untuk varibel LAST_PAGE_SELECTOR dan last_page. Dimana last_page berguna untuk mengambil index page terakhir yang ada di web tersebut yang kkemudian berguna untuk batas looping atau batas proses crawling. Kemudian cara menghilangkan missing value pada tabel dengan cara dibawah ini.</p>
+</section>
+<section id="menghilangkan-kolom-kosong-setelah-crawling">
+<h2>Menghilangkan Kolom Kosong setelah crawling<a class="headerlink" href="#menghilangkan-kolom-kosong-setelah-crawling" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data_hasil_crawling.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>code diatas digunakan untuk mengimportkan library pandas yang akan digunakan untuk code selanjutnya. Lalu baris kedua digunakan untuk membaca file yang sudah di crawling.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>page       0
+title      0
+author     0
+abstrac    0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>pada code di atas baris pertama digunakan untuk menghapus baris kosong, lalu baris kedua digunakan untuk medeteksi missing value kemudian dijumlahkan. setelah itu hasilnya di save dalam format xlsx dengan menggunakan code dibawah ini.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">&quot;hasil_crawling.xlsx&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="pre-processing-data">
+<h1>Pre-Processing Data<a class="headerlink" href="#pre-processing-data" title="Permalink to this headline">#</a></h1>
+<section id="implementasi-dalam-program-beserta-penjelasannya">
+<h2>Implementasi dalam program beserta penjelasannya<a class="headerlink" href="#implementasi-dalam-program-beserta-penjelasannya" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data visualisation and manipulation</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">openpyxl</span> <span class="kn">import</span> <span class="n">load_workbook</span> <span class="c1">#library untuk menampilkan dokumen</span>
+
+<span class="c1">#import nltk</span>
+<span class="kn">import</span> <span class="nn">nltk</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span><span class="p">,</span><span class="n">sent_tokenize</span>
+
+<span class="c1">#preprocessing</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>  <span class="c1">#stopwords</span>
+<span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">word_tokenize</span><span class="p">,</span><span class="n">sent_tokenize</span> <span class="c1"># tokenizing</span>
+<span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="kn">import</span> <span class="n">PorterStemmer</span><span class="p">,</span><span class="n">LancasterStemmer</span>  <span class="c1"># using the Porter Stemmer and Lancaster Stemmer and others</span>
+<span class="kn">from</span> <span class="nn">nltk.stem.snowball</span> <span class="kn">import</span> <span class="n">SnowballStemmer</span>
+<span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="kn">import</span> <span class="n">WordNetLemmatizer</span>  <span class="c1"># lammatizer from WordNet</span>
+
+<span class="c1"># for named entity recognition (NER)</span>
+<span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">ne_chunk</span>
+
+<span class="c1"># vectorizers for creating the document-term-matrix (DTM)</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span><span class="p">,</span><span class="n">CountVectorizer</span>
+
+<span class="c1">#stop-words</span>
+<span class="n">stop_words</span><span class="o">=</span><span class="nb">set</span><span class="p">(</span><span class="n">nltk</span><span class="o">.</span><span class="n">corpus</span><span class="o">.</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;indonesian&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Code diatas digunakan untuk mengimport berbagai library yang akan digunakan pada code selanjutnya.</p>
+<p><strong>LOADING DATASET</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wr</span> <span class="o">=</span> <span class="n">load_workbook</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;hasil_crawling.xlsx&#39;</span><span class="p">)</span>
+<span class="n">sheet_range</span> <span class="o">=</span> <span class="n">wr</span><span class="p">[</span><span class="s1">&#39;Sheet1&#39;</span><span class="p">]</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">sheet_range</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;page&#39;</span><span class="p">,</span><span class="s1">&#39;title&#39;</span><span class="p">,</span><span class="s1">&#39;author&#39;</span><span class="p">,</span> <span class="s1">&#39;abstrac&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>code diatas digunakan untuk membaca file yang bernama “hasil_crawling.xlsx”. setelah itu pada baris ke 2 digunakan untuk mengambil hanya pada sheet 1 yang ada pada file excel. lalu langkah selanjutnya adalah untuk mengambil kolom pada baris pertama dengan nama yang sudah tertera pada baris ke 5.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>page</th>
+      <th>title</th>
+      <th>author</th>
+      <th>abstrac</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>page</td>
+      <td>title</td>
+      <td>author</td>
+      <td>abstrac</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.0</td>
+      <td>https://pta.trunojoyo.ac.id/</td>
+      <td>STRATEGI PENGEMBANGAN MAKANAN DAN MINUMAN KHAS...</td>
+      <td>Penulis : Mohammad Maskur</td>
+      <td>Makanan dan minuman khas merupakan ciri dari k...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0</td>
+      <td>https://pta.trunojoyo.ac.id/</td>
+      <td>PERUMUSAN SANKSI PIDANA BAGI MASYARAKAT SEKITA...</td>
+      <td>Penulis : Moch. Steven</td>
+      <td>ABSTRAK\nAkhir-akhir ini semakin maraknya penc...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2.0</td>
+      <td>https://pta.trunojoyo.ac.id/</td>
+      <td>Peran Teor Motivasi Herzberg Sebagai Mediator ...</td>
+      <td>Penulis : Widha Deby Andrea</td>
+      <td>Penelitian ini bertujuan untuk dapat mengetahu...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3.0</td>
+      <td>https://pta.trunojoyo.ac.id/welcome/index/9</td>
+      <td>Model pemberdayaan ekonomi masyarakat melalui ...</td>
+      <td>Penulis : Rofiatul Zuhria</td>
+      <td>Kedai kopi sampah merupakan salah satu usaha y...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>code diatas digunakan untuk menampilkan hasil dari file yang sudah dibaca pada code sebelumnya. Kemudian membuat variabel baru untuk kolom abstrac saja</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;abstrac&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>DATA CLEANING DAN PREPROSESING TEKS</strong></p>
+<p>pada langkah ini digunakan untuk menghilangkan kata tambahan yaitu kata yang karakternya kurang dari 3 angka.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">clean_text</span><span class="p">(</span><span class="n">headline</span><span class="p">):</span>
+  <span class="n">le</span><span class="o">=</span><span class="n">WordNetLemmatizer</span><span class="p">()</span>
+  <span class="n">word_tokens</span><span class="o">=</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">headline</span><span class="p">)</span>
+  <span class="n">tokens</span><span class="o">=</span><span class="p">[</span><span class="n">le</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">word_tokens</span> <span class="k">if</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">3</span><span class="p">]</span>
+  <span class="n">cleaned_text</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">cleaned_text</span>
+<span class="n">df_bersih</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;abstrac&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">clean_text</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df_bersih</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0                                              abstrac
+1    Makanan minuman khas ciri kekayaan sumberdaya ...
+2    ABSTRAK Akhir-akhir maraknya pencurian kayu mi...
+3    Penelitian bertujuan pengaruh motivasi kerja m...
+4    Kedai kopi sampah salah usaha mencerminkan pem...
+Name: abstrac, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>pada code diatas adalah membuat sebuah fungsi yang berfungsi untuk melakukan data cleaning. dan dipanggil sesuai parameter yang ada.</p>
+<p><strong>MENGHILANGKAN ANGKA</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<span class="n">dokumenre</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df</span><span class="p">:</span> 
+    <span class="n">hasil</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\d+&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">dokumenre</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hasil</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dokumen2</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">dokumenre</span><span class="p">:</span>
+    <span class="n">hasil</span> <span class="o">=</span>  <span class="n">i</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span> 
+    <span class="n">dokumen2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hasil</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">dokumen2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;abstrac&#39;, &#39;Makanan minuman khas ciri kekayaan sumberdaya alam daerah memaksimalkan pariwisata Pulau Giligenting ditunjang dengan…&#39;, &#39;ABSTRAK Akhir-akhir maraknya pencurian kayu milik negara hutan masyarakat perumusan sanksi pidana dalam…&#39;, &#39;Penelitian bertujuan pengaruh motivasi kerja mediator self efficacy lingkungan kerja prestasi kerja…&#39;, &#39;Kedai kopi sampah salah usaha mencerminkan pemberdayaan masyarakat Kedai Kopi Sampah nama Kedai…&#39;, &#39;Abstrak Tenaga kerja orang pekerjaan menghasilkan barang jasa memenuhi kebutuhan sendiri…&#39;, &#39;Tujuan penelitian makna Bhubuhan diartikan bentuk pelunasan hutang pernikahan Madura terjadi…&#39;, &#39;Penelitian dilatar belakangi Bank Wakaf Mikro Sumber Barokah Denanyar Jombang salah BWM…&#39;, &#39;Penelitian bertujuan rata-rata hasil kemampuan berpikir kriti siswa materi pemanasan global berbasis pendekatan socioscientific…&#39;, &#39;Identifikasi atribut pejalan kaki salah penelitian dikembangkan peneliti computer vision fungsinya dianggap penting…&#39;, &#39;Abstrak Aprilia Puji Lestari  Program Studi Sosiologi Fakultas Ilmu Sosial Ilmu Budaya Universitas Trunojoyo Madura.…&#39;, &#39;Musha rakah Mutana akad pembiayaan muamalah Akad memiliki kriteria khusus kepemilikan asset barang modal bisa…&#39;, &#39;Perairan Soccah lokasi nelayan mencari ikan organisme laut udang rebon Acetes Udang rebon Acetes&#39;, &#39;Abstrak Rian Pandi Pranata  Program Studi Sosiologi Fakultas Ilmu Sosial Ilmu Budaya Universitas Trunojoyo Madura Analisis wacana…&#39;, &#39;Topik deteksi objek menarik perhatian perkembangan teknologi bidang computer vision Deteksi objek memiliki peranan sangat…&#39;, &#39;Sulfi Amalia ... English Study Program Analysis Category Shift English Translation Thesis Abstract Law…&#39;, &#39;Tujuan penelitian pengembangan ekonomi lokal wisata Jati Desa Goranggareng Kecamatan Nguntoronadi Kabupaten Magetan Pengembangan…&#39;, &#39;Mayarakat relawan Indonesia Surabaya terbentuk salah wadah relawan sosial kemanuisaan bantuan pamrih bentuk…&#39;, &#39;Siti Komariyah  Perbedaan kebahagiaan pasangan pernikahan Skripsi Program Studi Psikologi Fakultas Ilmu Sosial Ilmu…&#39;, &#39;Abstrak Dalam menyediakan hijauan pakan ternak potensi hijauan kebutuhan pakan optimal pakan digunakan…&#39;, &#39;Skripsi bertujuan menganalisis Stagnansi hubungan kelembagaan kewenangan komisi pemberantasan korupsi kepolisian Adanya fakta perseteruan antara…&#39;, &#39;Penelitian bertujuan self compassion survivor HIV-AIDS viral load terdeteksi Sejalan tujuan penelitian maka…&#39;, &#39;ABSTRAK Penelitian bertujuan Untuk bauran promosi periklanan penjualan pribadi promosi penjualan…&#39;, &#39;ABSTRAK Tujuan penelitian peran service performance climate organization parsial simultan untuk…&#39;, &#39;ABSTRAK Tujuan penelitian strategi bertahan hidup buruh tani wanita menghadapi…&#39;, &#39;ABSTRAK Penelitian bertujuan gambaran intimacy ayah single parent anak perempuannya Metode penelitian penelitian…&#39;, &#39;Tujuan penelitian mengambarkan bentuk perlawanan masyarakat Bedug Desa…&#39;, &#39;Information Retrieval pengambilan informasi tersimpan didalam dokumen berisikan konteks dokumen Adanya memiliki pengaruh…&#39;, &#39;ABSTRAK Rinda Pradina  Program Studi Ilmu Komunikasi Fakultas Ilmu Sosial Ilmu Budaya Universitas Trunojoyo Madura Supportiveness Single…&#39;, &#39;Investasi saham memiliki resiko kerugian pergerakan harga saham menentu meminimalkan resiko…&#39;, &#39;Ziarah makam kuburan tradisi leluhur kepulauan Indonesia…&#39;, &#39;Dianis industri rumah tangga memproduksi terasi tradisional hasil nelayan Desa Macajah menambah pendapatan yang…&#39;, &#39;Abstrak Zahriadi. Program Studi Sosiologi Fakultas Ilmu Sosial ilmu Budaya Universitas Trunojoyo Madura Pertukaran Sosial Tradisi Remo Studi…&#39;, &#39;Sungai Bancaran sungai Kabupaten Bangkalan merupakanperairan aktivitas manusia perairan sangat…&#39;, &#39;ABSTRAK Pada tahap-tahap produksi garam terbentuk lapisan kristal tipi bentuk dimensi yang…&#39;, &#39;Skripsi bejudul Analisis Investasi Syariah tinjau Al-Maslahah As-Salam Kecamatan Mojoagung Kabupaten Jombang Penelitian ini…&#39;, &#39;Lingkungan pantai wilayah mengalami perubahan bertemunya faktor berasal daratan dari…&#39;, &#39;Penelitian bertujuan menghasilkan perangkat pembelajaran kooperatif tipe mata pelajaran dasar desain grafis berbantuan medium kahoot kelas…&#39;, &#39;Desa Saobi Pulau Sapapan Saobi Bungin Nyarat kawasan memiliki ekosistem terumbu karang keberadaan ekosistem memiliki potensi…&#39;, &#39;abstrac&#39;, &#39;Makanan minuman khas ciri kekayaan sumberdaya alam daerah memaksimalkan pariwisata Pulau Giligenting ditunjang dengan…&#39;, &#39;ABSTRAK Akhir-akhir maraknya pencurian kayu milik negara hutan masyarakat perumusan sanksi pidana dalam…&#39;, &#39;Penelitian bertujuan pengaruh motivasi kerja mediator self efficacy lingkungan kerja prestasi kerja…&#39;, &#39;Penelitian bertujuan pengaruh pemberian dosis pupuk kandang sapi pertumbuhan kandungan serat pangan daun tanaman kolesom…&#39;, &#39;YULI WEDAYANTI  Program Studi Sosiologi Fakultas Ilmu Sosial Ilmu Budaya Universitas Trunojoyo Madura Skripsi Makna…&#39;, &#39;Abstrak Peran guru melestarikan kebudayaan masyarakat guru memiliki perana ditengah-tengah masyarakat.…&#39;, &#39;Laut Jawa Wilayah Pengelolaan Perikanan/ perairan potensial habitat kelompok jenis ikan pelagis…&#39;, &#39;Penelitian bertujuan membahas jenis tanda metadiscourse metadiscourse pidato Thunberg Penelitian metode…&#39;, &#39;Siti Maghfuro  Program Studi Sosiologi Fakultas Ilmu Sosial Ilmu Budaya Universitas Trunojoyo Madura Memaknai Gaya Hidup Penikmat Kopi…&#39;, &#39;MSDs Musculoskeletal Disorders gangguan cidera jaringan lunak tubuh otot tendon ligament Cidera terjadi…&#39;, &#39;ABSTRAK Tanaman Kolesom Talinum triangulare Jacq Willd jenis tanaman hortikultura hasil panen umbi pucuk berkhasiat…&#39;, &#39;Pulau Gili Ketapang salah daerah pusat perikanan tangkap Kabupaten Probolinggo Daerah memiliki luas wilayah&#39;, &#39;Biochar padatan kaya kandungan karbon hasil konversi biomassa prose pirolisis Pencampuran biochar pupuk kandang…&#39;, &#39;Tujuan Penelitian respon orang siswa kelas rendah pembelajaran daring permasalahan dihadapi…&#39;, &#39;Gerakan literasi mengalami permasalahan ketersediaan pengelolaan sumberdaya Berkaitan skripsi bertujuan untuk…&#39;, &#39;Penelitian judul Public Awareness Masyarakat Madura Konsep Halal Tourism Pariwisata Berkearifan Lokal bertujuan mengetahui…&#39;, &#39;Indonesia potensi pengembangan Industri pariwisata dinilai menjanjikan Banyaknya keberagaman destinasi contohnya wisata alam wisata buatan maupun…&#39;, &#39;ABSTRAK Analisis Peran Pesantren Dalam Pengembangan Insna Entrepreneur Studi Kasus Pondok Pesantren Darul Hikmah Burneh Bangkalan Kewirausahaan memiliki…&#39;, &#39;Abstrak Farida Yulistiana  Program Studi Sosiologi Pertukaran sosial tradisi sape tok-tok Tujuan penelitian adalah…&#39;, &#39;Rumah sakit salah instansi bidang pelayanan jasa kesehatan beroprasi penuh hari…&#39;, &#39;Tujuan penelitian Beban Operasional Pendapatan Operasional BOPO Loan Deposit Ratio Return&#39;, &#39;Literasi zakat pengetahuan keterampilan keyakinan mempengaruhi sikap perilaku meningkatkan kualitas pengambilan keputusan…&#39;, &#39;Penelitian berlokasikan Semen Indonesia Pabrik Tuban unit kerja packer Tuban Terdapat jenis kerusakan mesin yang…&#39;, &#39;Nilai perusahaan terpenting investor calon investor menanamkan dananya perusahaan Semakin berkembangnya…&#39;, &#39;Febrianti  Program Studi Sosiologi Fakultas Ilmu Sosial Ilmu Budaya Universitas Trunojoyo Madura Jaringan Sosial Pengusaha Kerajinan Limbah…&#39;, &#39;Penelitian bertujuan hubungan prokrastinasi akademik burnout perilaku plagiarisme mahasiswa psikologi Subjek penelitian adalah…&#39;, &#39;ABSTRAK Tujuan penelitian pengaruh faktor kualitas produk harga keputusan pembelian parsial…&#39;, &#39;Klasifikasi citra prose pengelompokan piksel citra kelas memiliki batasan Setiap kelas memiliki label…&#39;, &#39;ABSTRAK Penelitian bertujuan perhitungan tingkat hunian kamar Hotel Panglima Sampang analisis cost volume profit…&#39;, &#39;Abstrak Tujuan penelitian fenomena dialami Kelompok Dukungan Sebaya pasien ODHA Orang HIV/AIDS&#39;, &#39;ABSTRAK Uswatun Hasanah  Pengaruh Pelatihan Kompensasi Terhadap Produktivitas Kerja Dengan Kepuasan Kerja Sebagai Variabel intervening Pada PDAM Sumber…&#39;, &#39;Pengadilan agama salah kekuasaan kehakiman Indonesia tugas pokok pengadilan agama menerima memeriksa mengadili serta…&#39;, &#39;ABSTRAK Tujuan utama penelitian fotografi komunikasi pemasaran menarik minat pengunjung wisata Bukit…&#39;, &#39;Kedai kopi sampah salah usaha mencerminkan pemberdayaan masyarakat Kedai Kopi Sampah nama Kedai…&#39;, &#39;Abstrak Tenaga kerja orang pekerjaan menghasilkan barang jasa memenuhi kebutuhan sendiri…&#39;, &#39;Tujuan penelitian makna Bhubuhan diartikan bentuk pelunasan hutang pernikahan Madura terjadi…&#39;, &#39;Penelitian dilatar belakangi Bank Wakaf Mikro Sumber Barokah Denanyar Jombang salah BWM…&#39;, &#39;Identifikasi atribut pejalan kaki salah penelitian dikembangkan peneliti computer vision fungsinya dianggap penting…&#39;, &#39;Penelitian bertujuan rata-rata hasil kemampuan berpikir kriti siswa materi pemanasan global berbasis pendekatan socioscientific…&#39;, &#39;Abstrak Aprilia Puji Lestari  Program Studi Sosiologi Fakultas Ilmu Sosial Ilmu Budaya Universitas Trunojoyo Madura.…&#39;, &#39;Musha rakah Mutana akad pembiayaan muamalah Akad memiliki kriteria khusus kepemilikan asset barang modal bisa…&#39;, &#39;Sulfi Amalia ... English Study Program Analysis Category Shift English Translation Thesis Abstract Law…&#39;, &#39;Tujuan penelitian pengembangan ekonomi lokal wisata Jati Desa Goranggareng Kecamatan Nguntoronadi Kabupaten Magetan Pengembangan…&#39;, &#39;Mayarakat relawan Indonesia Surabaya terbentuk salah wadah relawan sosial kemanuisaan bantuan pamrih bentuk…&#39;, &#39;ABSTRAK Tujuan penelitian strategi bertahan hidup buruh tani wanita menghadapi…&#39;, &#39;ABSTRAK Penelitian bertujuan gambaran intimacy ayah single parent anak perempuannya Metode penelitian penelitian…&#39;, &#39;Tujuan penelitian mengambarkan bentuk perlawanan masyarakat Bedug Desa…&#39;, &#39;Penelitian bertujuan self compassion survivor HIV-AIDS viral load terdeteksi Sejalan tujuan penelitian maka…&#39;, &#39;ABSTRAK Penelitian bertujuan Untuk bauran promosi periklanan penjualan pribadi promosi penjualan…&#39;, &#39;ABSTRAK Tujuan penelitian peran service performance climate organization parsial simultan untuk…&#39;, &#39;Penelitian dilatarbelakangi kesulitan siswa menuangkan karya tulis puisi kurangnya pemanfaatan medium dalam…&#39;, &#39;ABSTRAK Abstrak Penelitian mengkaji bentuk kalimat analitis kontradiktif sintesis rubrik citizen reporter surat kabar Harian…&#39;, &#39;ABSTRAK Produksi garam krosok Salt House kualitas rendah segi fisik bersih…&#39;, &#39;Penelitian bertujuan meneliti penggambaran representasi promosi video pariwisata Lombok akun YouTube resmi pariwisata Indonesia Analasis…&#39;, &#39;ANALISIS BAHASA FIGURATIF YANG DIGUNAKAN DALAM LYRIK TERPILIH DARI LAGU KATY PERRY R.Ayu Suci Istighfar Aini Program Studi Bahasa Inggris&#39;, &#39;Abstrak Tujuan penelitian Hambatan Komunikasi Antar Budaya Mahasiswa Papua Madura deskriptif Mahasiswa Papua…&#39;, &#39;ABSTRAK Faktor-Faktor Mempengaruhi Minat Nasabah Membuka Rekening Tabungan Mantab Sidogiri Cabang Blega Pada zaman modern…&#39;, &#39;ABSTRAK Tanah Madura didominasi kompleks tanah mediteran merah berbahan induk batu kapur batu pasir Sehingga perhatian…&#39;, &#39;ABSTRAK Sari Meliya Intan ... Pengembangan Karakter Plot Cerpen Alice Munro Bear Came over Mountain Tesis.…&#39;, &#39;Hotel syariah hotel menjalankan kegiatan bisnis operasionalnya berdasarkan prinsip syariah Salah hotel syariah ialah…&#39;, &#39;Penelitian bertujuan pengaruh Operating Margin Kualitas Aktiva Produktif Financing Deposit Ratio…&#39;, &#39;ABSTRAK ANALISIS STRATEGI FUNDRAISING LEMBAGA AMIL ZAKAT DALAM MENDAPATKAN MUZAKKI MUNFAQIN Studi Kasus Lazismu Pamekasan Lazismu pamekasan salah…&#39;, &#39;Penelitian judul Analisis Penerapan Sistem Penjaminan Halal Produk Makanan Minuman Berbahan Dasar Cokelat Pada Kampung Coklat Blitar…&#39;, &#39;ABSTRAK Kebahagiaan wisatawan domestik diraih salah satunya petualangan tantangan mendaki gunung…&#39;, &#39;Pengendalian kualitas upaya mempertahankan meningkatkan kualitas produk sesuai sesuai dengan…&#39;, &#39;Peminjaman dana sistem online masyarakat dianggap praktis rumit Setelah persyaratan dipenuhi masyarakat&#39;, &#39;Ambar Kusuma  Pengaruh Gratitude Tehadap Kepuasan Hidup Pada Komunitas HIV/AIDS Friendship Plus Sebaya Kediri Skripsi Program Studi Psikologi&#39;, &#39;ABSTRAK Minimarket pasar modern pasar swalayan memiliki kasir Dengan perubahan…&#39;, &#39;Handayanie  Pengaruh Motivasi Belanja Hedonis Emosi Positif Terhadap Impulsive Buying Remaja Akhir Skripsi Program Studi…&#39;, &#39;ABSTRAK Handayanie  Pengaruh Motivasi Belanja Hedonis Emosi Positif Terhadap Impulsive Buying Skripsi Program Studi Psikologi Fakultas…&#39;, &#39;Penelitian latar belakangi perangkat pembelajaran sekolah format KTSP kurikulum  sesuai…&#39;, &#39;Garam salah komoditas perekonomian kawasan pesisir Proses produksi garam metode tradisional faktor…&#39;, &#39;Kebutuhan garam Indonesia seiring bertambahnya penduduk dimanfaatkan garam konsumsi industri meningkat Produksi garam indonesia…&#39;, &#39;Penelitian lapangan bertujuan bentuk pelindungan konsumen pencantuman label halal sertifikasi LPPOM&#39;, &#39;Tujuan penelitian kemampuan jenis kesalahan siswa menyelesaikan HOTS Penelitian penilitian…&#39;, &#39;ABSTRAK Kabupaten Sampang salah kabupaten terletak Pulau Madura.Kabupaten Sampang memiliki potensi sumberdaya alam menunjang…&#39;, &#39;Pola tanam teknik petani menentukan jenis tanam usaha taninya Pamekasan umumnya…&#39;, &#39;ABSTRAK Kewirausahaan kemampuan menciptakan berpikir kreatif bertindak inovatif menciptakan peluang Konsep dan…&#39;, &#39;Penelitian dilatar belakangi dunia keuangan islam penerapan akad syariah dunia technologi finansial Kandang.in…&#39;, &#39;Fortifikasi metode penambahan mikronutrien bahan makanan tujuan utama meningkatkan gizi suatu…&#39;, &#39;Produk ramah lingkungan mengurangi pencemaran lingkungan konsumsi jangka Tujuan penelitian adalah…&#39;, &#39;Penelitian bertujuan mendeskripsikan faktor mempengaruhi kemampuan berpikir kriti metakognisi siswa materi pemanasan global Penelitian ini…&#39;, &#39;Zakat salah Hukum Islam mengalami perkembangan sesuai zamannya zakat bentuk ibadah yang…&#39;, &#39;Tsunami gelombang pasang dibangkitkan gempa tektonik letusan gunung lautan tanah longsor Bencana yang…&#39;, &#39;Abstrak Penelitian bertujuan pengaruh adversity quotient intensi berwirausaha masyarakat pesisir Desa Ambunten Timur Kecamatan…&#39;, &#39;Penelitian bertujuan pengunaan medium modul bahan pewarna batik banyuates madura siswa kelas VIII…&#39;, &#39;ABSTRAK MODEL PEMBERDAYAAN SANTRIPRENEUR DALAM MENINGKATKAN PEREKONOMIAN PESANTREN Studi Kasus Al-Amien Prenduan Sumenep Madura Pulau Madura dikenal dengan…&#39;, &#39;ABSTRAK Abstrak Peribahasa kalimat penggalan kalimat bersifat turun-temurun makna khusus pemakaian bahasa.…&#39;, &#39;Penelitian bertujuan mengidentifikasi persentase prose kemampuan berpikir kriti siswa kelas Penelitian jenis penelitian campuran…&#39;, &#39;Tambak garam lahan penentu pengaruh faktor produksi garam Habitat mikroalga hidup ditempat yang…&#39;, &#39;Tujuan penelitian strategi retorika penutur amal masjid jalanan Kecamatan Tanah Merah Kecamatan…&#39;, &#39;Sepak bola salah olahraga digemari remaja belahan dunia abad…&#39;, &#39;Pesisir Pantai Kenjeran kawasan potensi wisata ekonomi ekologis banyaknya aktivitas nelayan Kegiatan menyebabkan…&#39;, &#39;ABSTRACT Nafilatun Nasuha  Analysis Personal Pronouns Donald Trump Speech Critical Discourse Analysis Thesis.English Study Program&#39;, &#39;Mikroplastik sampah plastik mengalami degradasi terurai partikel-partikel plastik Keberadaan mikroplastik&#39;, &#39;Penelitian bertujuan kelayakan keterbacaan respons siswa Lembaran kerja siswa Menggunakan model pengembangan meliputi Define&#39;, &#39;Perbedaan harga diterapkan pemilik jasa transportasi objek wisata kerap kebiasaan masyarakat Sesuatu kebiasaan…&#39;, &#39;ABSTRAK Remoh blater diadakan berkumpulnya blater desa Kabupaten Bangkalan keuntungan dari…&#39;, &#39;Penduduk Indonesia mayoritas beragama Islam mewajibkan umat muslim mengkonsumsi produk bersertifikasi halal Sebuah produk bersertifikasi halal MUI…&#39;, &#39;Perguruan Tinggi salah jenjang pendidikan Sekolah Menengah Atas menyeleksi penerimaan mahasiswa berdasarkan jalur prestasi&#39;, &#39;ABSTRAK Tsunami bencana ancaman masyarakat wilayah pesisir.Tsunami kerusakan daratan…&#39;, &#39;Apie Indo Karunia perusahaan bidang industri manufaktur memproduksi produk berbahan dasar logam Produk diproduksi…&#39;, &#39;Penelitian bertujuan persentase miskonsepsi siswa faktor-faktor penyebab miskonsepsi siswa Penelitian ini…&#39;, &#39;ABSTRAK Pengaruh Integrated Marketing Communication Kualitas Layanan Terhadap Kepuasan Peziarah Pada Makam Religi Bangkalan Studi Kasus Makam Syaikhona…&#39;, &#39;Financial Distress ketidakmampuan perusahaan memenuhi kewajibannya Analisis bahan evaluasi perusahaan memperbaiki kinerja perusahaan…&#39;, &#39;Rajungan Portunus pelagicus komoditas nilai ekonomi permintaan pasar luar…&#39;, &#39;ABSTRAK Rendra Fresty Pratiwi  Program Studi Psikologi Perbedaan Strategi Coping Ditinjau Tipe Kepribadian Ekstrovert Introvert Pada Anak…&#39;, &#39;Meningkatnya kandungan karbon dioksida udara menyebabkan kenaikan suhu bumi efek rumah kaca/pemanasan global Penelitian bertujuan…&#39;, &#39;Sentra Industri Songkok sekumpulan unit usaha menghasilkan produk sejenis menyerap tenaga kerja local …&#39;, &#39;ABSTRAK LITERASI HALAL SERTIKASI HALAL PADA PELAKU KRIPIK SINGKONG MANDING Halal Lifestyle Indonesia ini…&#39;, &#39;Penelitian berjudul Bias Gender Jurnalis Perempuan Media Massa Kota Bangkalan meneliti motivasi memilih profesi jurnalis diskriminasi&#39;, &#39;Skripsi berjudul tinjauan sosiologi hukum Islam praktik jual beli bahan pokok makanan tempo studi kasus…&#39;, &#39;ABSTRAK ANALISIS MANAJEMEN RISIKO PEMBIAYAAN DANA TALANGAN UMROH PADA TABUNG HAJI UMROH YULIANTO FOUNDATION SURABAYA Tabung Haji Umroh…&#39;, &#39;ABSTRAK Nurul Habibah. Program Studi Sosiologi Fakultas Ilmu Sosial Budaya Universitas Trunojoyo Madura Pertukaran Sosial Tradisi Timang Manten…&#39;, &#39;ABSTRAK Vikki Hidayat  Pengaruh Kualitas Kehidupan Kerja Kepuasan Kerja Petani Garam Kecamatan Kalianget Sumenep Skripsi Program…&#39;, &#39;Abstrak Penelitian bertujuan motivasi berprestasi petambak garam Penelitian metode penelitian deskriptif kualitatif pendekatan fenomenologi.…&#39;, &#39;Abstrak Tujuan penelitian gambaran pendampingan orang prose belajar anak persepsi anak…&#39;, &#39;ABSTRAK Ririn Octaviani  Pengaruh Regulasi Diri Prokrastinasi Akademik Mahasiswa Bidikmisi Melampaui Batas Masa Studi Normal&#39;, &#39;Sungai Bancaran sungai Kabupaten Bangkalan merupakanperairan aktivitas manusia perairan sangat…&#39;, &#39;ABSTRAK Pada tahap-tahap produksi garam terbentuk lapisan kristal tipi bentuk dimensi yang…&#39;, &#39;Skripsi bejudul Analisis Investasi Syariah tinjau Al-Maslahah As-Salam Kecamatan Mojoagung Kabupaten Jombang Penelitian ini…&#39;, &#39;Ziarah makam kuburan tradisi leluhur kepulauan Indonesia…&#39;, &#39;Dianis industri rumah tangga memproduksi terasi tradisional hasil nelayan Desa Macajah menambah pendapatan yang…&#39;, &#39;Abstrak Zahriadi. Program Studi Sosiologi Fakultas Ilmu Sosial ilmu Budaya Universitas Trunojoyo Madura Pertukaran Sosial Tradisi Remo Studi…&#39;, &#39;Information Retrieval pengambilan informasi tersimpan didalam dokumen berisikan konteks dokumen Adanya memiliki pengaruh…&#39;, &#39;ABSTRAK Rinda Pradina  Program Studi Ilmu Komunikasi Fakultas Ilmu Sosial Ilmu Budaya Universitas Trunojoyo Madura Supportiveness Single…&#39;, &#39;Investasi saham memiliki resiko kerugian pergerakan harga saham menentu meminimalkan resiko…&#39;, &#39;Lingkungan pantai wilayah mengalami perubahan bertemunya faktor berasal daratan dari…&#39;, &#39;Penelitian bertujuan menghasilkan perangkat pembelajaran kooperatif tipe mata pelajaran dasar desain grafis berbantuan medium kahoot kelas…&#39;, &#39;Desa Saobi Pulau Sapapan Saobi Bungin Nyarat kawasan memiliki ekosistem terumbu karang keberadaan ekosistem memiliki potensi…&#39;, &#39;Kegiatan pembelajaran medium pembelajaran sederhana medium dimensi gambar poster media…&#39;, &#39;Penelitian bertujuan Manajemen Konflik Perempuan Madura Yang Memutuskan Untuk Kuliah Studi Kasus Perempuan Madura Yang Hidup Dalam…&#39;, &#39;Permasalahan ditemui produksi jagung dilahan pertanian Kecamatan Socah tergolong rendah dibandingkan penghasil jagung…&#39;, &#39;Siti Komariyah  Perbedaan kebahagiaan pasangan pernikahan Skripsi Program Studi Psikologi Fakultas Ilmu Sosial Ilmu…&#39;, &#39;Abstrak Dalam menyediakan hijauan pakan ternak potensi hijauan kebutuhan pakan optimal pakan digunakan…&#39;, &#39;Skripsi bertujuan menganalisis Stagnansi hubungan kelembagaan kewenangan komisi pemberantasan korupsi kepolisian Adanya fakta perseteruan antara…&#39;, &#39;ABSTRAK Afiyah Nurisnaini  Program Studi Psikologi Hubungan Strategi Coping Psychological Well Being Narapidana Lansia Lembaga Pemasyarakatan…&#39;, &#39;Penelitian bertujuan menganalisis kemampuan pemecahan siswa menyelesaikan kemampuan pemecahan Jenis penelitian…&#39;, &#39;Halal Value Chain upaya terintegrasi industri input produksi distribusi pemasaran komsumsi Dalam menghasilkan produk halal&#39;, &#39;ABSTRAK makanan dikonsumsi masyarakat dunia Indonesia seringkali menggantikan…&#39;, &#39;Tanaman kolesom Talinum triangulare Jacq Willd memiliki keunggulan bahan baku obat umbi pucuknya sebagai…&#39;, &#39;Penelitian mengambil objek Adiluhung Saranasegara Indonesia menguji pengaruh lingkungan kerja fisik disiplin Kerja…&#39;, &#39;Perairan Soccah lokasi nelayan mencari ikan organisme laut udang rebon Acetes Udang rebon Acetes&#39;, &#39;Abstrak Rian Pandi Pranata  Program Studi Sosiologi Fakultas Ilmu Sosial Ilmu Budaya Universitas Trunojoyo Madura Analisis wacana…&#39;, &#39;Topik deteksi objek menarik perhatian perkembangan teknologi bidang computer vision Deteksi objek memiliki peranan sangat…&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>cara menghilangkan angka pada setiap kata dengan cara menggunakan library regex dan memanfaatkan looping untuk memprosesnya</p>
+<p><strong>MENGHILANGKAN KATA HUBUNG</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Sastrawi.StopWordRemover.StopWordRemoverFactory</span> <span class="kn">import</span> <span class="n">StopWordRemoverFactory</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="n">factory</span> <span class="o">=</span> <span class="n">StopWordRemoverFactory</span><span class="p">()</span>
+<span class="n">stopword</span>  <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">create_stop_word_remover</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">dokumen2</span><span class="p">)</span>
+<span class="n">dokumenstop</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="n">sentence</span> <span class="o">=</span> <span class="n">stopword</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">dokumen2</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">dokumenstop</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dokumenstop</span><span class="p">)</span>   
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;abstrac&#39;, &#39;Makanan minuman khas ciri kekayaan sumberdaya alam daerah memaksimalkan pariwisata Pulau Giligenting ditunjang dengan…&#39;, &#39;ABSTRAK Akhir-akhir maraknya pencurian kayu milik negara hutan masyarakat perumusan sanksi pidana dalam…&#39;, &#39;Penelitian bertujuan pengaruh motivasi kerja mediator self efficacy lingkungan kerja prestasi kerja…&#39;, &#39;Kedai kopi sampah salah usaha mencerminkan pemberdayaan masyarakat Kedai Kopi Sampah nama Kedai…&#39;, &#39;Abstrak Tenaga kerja orang pekerjaan menghasilkan barang jasa memenuhi kebutuhan sendiri…&#39;, &#39;Tujuan penelitian makna Bhubuhan diartikan bentuk pelunasan hutang pernikahan Madura terjadi…&#39;, &#39;Penelitian dilatar belakangi Bank Wakaf Mikro Sumber Barokah Denanyar Jombang salah BWM…&#39;, &#39;Penelitian bertujuan rata-rata hasil kemampuan berpikir kriti siswa materi pemanasan global berbasis pendekatan socioscientific…&#39;, &#39;Identifikasi atribut pejalan kaki salah penelitian dikembangkan peneliti computer vision fungsinya dianggap penting…&#39;, &#39;Abstrak Aprilia Puji Lestari  Program Studi Sosiologi Fakultas Ilmu Sosial Ilmu Budaya Universitas Trunojoyo Madura.…&#39;, &#39;Musha rakah Mutana akad pembiayaan muamalah Akad memiliki kriteria khusus kepemilikan asset barang modal bisa…&#39;, &#39;Perairan Soccah lokasi nelayan mencari ikan organisme laut udang rebon Acetes Udang rebon Acetes&#39;, &#39;Abstrak Rian Pandi Pranata  Program Studi Sosiologi Fakultas Ilmu Sosial Ilmu Budaya Universitas Trunojoyo Madura Analisis wacana…&#39;, &#39;Topik deteksi objek menarik perhatian perkembangan teknologi bidang computer vision Deteksi objek memiliki peranan sangat…&#39;, &#39;Sulfi Amalia ... English Study Program Analysis Category Shift English Translation Thesis Abstract Law…&#39;, &#39;Tujuan penelitian pengembangan ekonomi lokal wisata Jati Desa Goranggareng Kecamatan Nguntoronadi Kabupaten Magetan Pengembangan…&#39;, &#39;Mayarakat relawan Indonesia Surabaya terbentuk salah wadah relawan sosial kemanuisaan bantuan pamrih bentuk…&#39;, &#39;Siti Komariyah  Perbedaan kebahagiaan pasangan pernikahan Skripsi Program Studi Psikologi Fakultas Ilmu Sosial Ilmu…&#39;, &#39;Abstrak Dalam menyediakan hijauan pakan ternak potensi hijauan kebutuhan pakan optimal pakan digunakan…&#39;, &#39;Skripsi bertujuan menganalisis Stagnansi hubungan kelembagaan kewenangan komisi pemberantasan korupsi kepolisian Adanya fakta perseteruan antara…&#39;, &#39;Penelitian bertujuan self compassion survivor HIV-AIDS viral load terdeteksi Sejalan tujuan penelitian maka…&#39;, &#39;ABSTRAK Penelitian bertujuan Untuk bauran promosi periklanan penjualan pribadi promosi penjualan…&#39;, &#39;ABSTRAK Tujuan penelitian peran service performance climate organization parsial simultan untuk…&#39;, &#39;ABSTRAK Tujuan penelitian strategi bertahan hidup buruh tani wanita menghadapi…&#39;, &#39;ABSTRAK Penelitian bertujuan gambaran intimacy ayah single parent anak perempuannya Metode penelitian penelitian…&#39;, &#39;Tujuan penelitian mengambarkan bentuk perlawanan masyarakat Bedug Desa…&#39;, &#39;Information Retrieval pengambilan informasi tersimpan didalam dokumen berisikan konteks dokumen Adanya memiliki pengaruh…&#39;, &#39;ABSTRAK Rinda Pradina  Program Studi Ilmu Komunikasi Fakultas Ilmu Sosial Ilmu Budaya Universitas Trunojoyo Madura Supportiveness Single…&#39;, &#39;Investasi saham memiliki resiko kerugian pergerakan harga saham menentu meminimalkan resiko…&#39;, &#39;Ziarah makam kuburan tradisi leluhur kepulauan Indonesia…&#39;, &#39;Dianis industri rumah tangga memproduksi terasi tradisional hasil nelayan Desa Macajah menambah pendapatan yang…&#39;, &#39;Abstrak Zahriadi. Program Studi Sosiologi Fakultas Ilmu Sosial ilmu Budaya Universitas Trunojoyo Madura Pertukaran Sosial Tradisi Remo Studi…&#39;, &#39;Sungai Bancaran sungai Kabupaten Bangkalan merupakanperairan aktivitas manusia perairan sangat…&#39;, &#39;ABSTRAK Pada tahap-tahap produksi garam terbentuk lapisan kristal tipi bentuk dimensi yang…&#39;, &#39;Skripsi bejudul Analisis Investasi Syariah tinjau Al-Maslahah As-Salam Kecamatan Mojoagung Kabupaten Jombang Penelitian ini…&#39;, &#39;Lingkungan pantai wilayah mengalami perubahan bertemunya faktor berasal daratan dari…&#39;, &#39;Penelitian bertujuan menghasilkan perangkat pembelajaran kooperatif tipe mata pelajaran dasar desain grafis berbantuan medium kahoot kelas…&#39;, &#39;Desa Saobi Pulau Sapapan Saobi Bungin Nyarat kawasan memiliki ekosistem terumbu karang keberadaan ekosistem memiliki potensi…&#39;, &#39;abstrac&#39;, &#39;Makanan minuman khas ciri kekayaan sumberdaya alam daerah memaksimalkan pariwisata Pulau Giligenting ditunjang dengan…&#39;, &#39;ABSTRAK Akhir-akhir maraknya pencurian kayu milik negara hutan masyarakat perumusan sanksi pidana dalam…&#39;, &#39;Penelitian bertujuan pengaruh motivasi kerja mediator self efficacy lingkungan kerja prestasi kerja…&#39;, &#39;Penelitian bertujuan pengaruh pemberian dosis pupuk kandang sapi pertumbuhan kandungan serat pangan daun tanaman kolesom…&#39;, &#39;YULI WEDAYANTI  Program Studi Sosiologi Fakultas Ilmu Sosial Ilmu Budaya Universitas Trunojoyo Madura Skripsi Makna…&#39;, &#39;Abstrak Peran guru melestarikan kebudayaan masyarakat guru memiliki perana ditengah-tengah masyarakat.…&#39;, &#39;Laut Jawa Wilayah Pengelolaan Perikanan/ perairan potensial habitat kelompok jenis ikan pelagis…&#39;, &#39;Penelitian bertujuan membahas jenis tanda metadiscourse metadiscourse pidato Thunberg Penelitian metode…&#39;, &#39;Siti Maghfuro  Program Studi Sosiologi Fakultas Ilmu Sosial Ilmu Budaya Universitas Trunojoyo Madura Memaknai Gaya Hidup Penikmat Kopi…&#39;, &#39;MSDs Musculoskeletal Disorders gangguan cidera jaringan lunak tubuh otot tendon ligament Cidera terjadi…&#39;, &#39;ABSTRAK Tanaman Kolesom Talinum triangulare Jacq Willd jenis tanaman hortikultura hasil panen umbi pucuk berkhasiat…&#39;, &#39;Pulau Gili Ketapang salah daerah pusat perikanan tangkap Kabupaten Probolinggo Daerah memiliki luas wilayah&#39;, &#39;Biochar padatan kaya kandungan karbon hasil konversi biomassa prose pirolisis Pencampuran biochar pupuk kandang…&#39;, &#39;Tujuan Penelitian respon orang siswa kelas rendah pembelajaran daring permasalahan dihadapi…&#39;, &#39;Gerakan literasi mengalami permasalahan ketersediaan pengelolaan sumberdaya Berkaitan skripsi bertujuan untuk…&#39;, &#39;Penelitian judul Public Awareness Masyarakat Madura Konsep Halal Tourism Pariwisata Berkearifan Lokal bertujuan mengetahui…&#39;, &#39;Indonesia potensi pengembangan Industri pariwisata dinilai menjanjikan Banyaknya keberagaman destinasi contohnya wisata alam wisata buatan maupun…&#39;, &#39;ABSTRAK Analisis Peran Pesantren Dalam Pengembangan Insna Entrepreneur Studi Kasus Pondok Pesantren Darul Hikmah Burneh Bangkalan Kewirausahaan memiliki…&#39;, &#39;Abstrak Farida Yulistiana  Program Studi Sosiologi Pertukaran sosial tradisi sape tok-tok Tujuan penelitian adalah…&#39;, &#39;Rumah sakit salah instansi bidang pelayanan jasa kesehatan beroprasi penuh hari…&#39;, &#39;Tujuan penelitian Beban Operasional Pendapatan Operasional BOPO Loan Deposit Ratio Return&#39;, &#39;Literasi zakat pengetahuan keterampilan keyakinan mempengaruhi sikap perilaku meningkatkan kualitas pengambilan keputusan…&#39;, &#39;Penelitian berlokasikan Semen Indonesia Pabrik Tuban unit kerja packer Tuban Terdapat jenis kerusakan mesin yang…&#39;, &#39;Nilai perusahaan terpenting investor calon investor menanamkan dananya perusahaan Semakin berkembangnya…&#39;, &#39;Febrianti  Program Studi Sosiologi Fakultas Ilmu Sosial Ilmu Budaya Universitas Trunojoyo Madura Jaringan Sosial Pengusaha Kerajinan Limbah…&#39;, &#39;Penelitian bertujuan hubungan prokrastinasi akademik burnout perilaku plagiarisme mahasiswa psikologi Subjek penelitian adalah…&#39;, &#39;ABSTRAK Tujuan penelitian pengaruh faktor kualitas produk harga keputusan pembelian parsial…&#39;, &#39;Klasifikasi citra prose pengelompokan piksel citra kelas memiliki batasan Setiap kelas memiliki label…&#39;, &#39;ABSTRAK Penelitian bertujuan perhitungan tingkat hunian kamar Hotel Panglima Sampang analisis cost volume profit…&#39;, &#39;Abstrak Tujuan penelitian fenomena dialami Kelompok Dukungan Sebaya pasien ODHA Orang HIV/AIDS&#39;, &#39;ABSTRAK Uswatun Hasanah  Pengaruh Pelatihan Kompensasi Terhadap Produktivitas Kerja Dengan Kepuasan Kerja Sebagai Variabel intervening Pada PDAM Sumber…&#39;, &#39;Pengadilan agama salah kekuasaan kehakiman Indonesia tugas pokok pengadilan agama menerima memeriksa mengadili serta…&#39;, &#39;ABSTRAK Tujuan utama penelitian fotografi komunikasi pemasaran menarik minat pengunjung wisata Bukit…&#39;, &#39;Kedai kopi sampah salah usaha mencerminkan pemberdayaan masyarakat Kedai Kopi Sampah nama Kedai…&#39;, &#39;Abstrak Tenaga kerja orang pekerjaan menghasilkan barang jasa memenuhi kebutuhan sendiri…&#39;, &#39;Tujuan penelitian makna Bhubuhan diartikan bentuk pelunasan hutang pernikahan Madura terjadi…&#39;, &#39;Penelitian dilatar belakangi Bank Wakaf Mikro Sumber Barokah Denanyar Jombang salah BWM…&#39;, &#39;Identifikasi atribut pejalan kaki salah penelitian dikembangkan peneliti computer vision fungsinya dianggap penting…&#39;, &#39;Penelitian bertujuan rata-rata hasil kemampuan berpikir kriti siswa materi pemanasan global berbasis pendekatan socioscientific…&#39;, &#39;Abstrak Aprilia Puji Lestari  Program Studi Sosiologi Fakultas Ilmu Sosial Ilmu Budaya Universitas Trunojoyo Madura.…&#39;, &#39;Musha rakah Mutana akad pembiayaan muamalah Akad memiliki kriteria khusus kepemilikan asset barang modal bisa…&#39;, &#39;Sulfi Amalia ... English Study Program Analysis Category Shift English Translation Thesis Abstract Law…&#39;, &#39;Tujuan penelitian pengembangan ekonomi lokal wisata Jati Desa Goranggareng Kecamatan Nguntoronadi Kabupaten Magetan Pengembangan…&#39;, &#39;Mayarakat relawan Indonesia Surabaya terbentuk salah wadah relawan sosial kemanuisaan bantuan pamrih bentuk…&#39;, &#39;ABSTRAK Tujuan penelitian strategi bertahan hidup buruh tani wanita menghadapi…&#39;, &#39;ABSTRAK Penelitian bertujuan gambaran intimacy ayah single parent anak perempuannya Metode penelitian penelitian…&#39;, &#39;Tujuan penelitian mengambarkan bentuk perlawanan masyarakat Bedug Desa…&#39;, &#39;Penelitian bertujuan self compassion survivor HIV-AIDS viral load terdeteksi Sejalan tujuan penelitian maka…&#39;, &#39;ABSTRAK Penelitian bertujuan Untuk bauran promosi periklanan penjualan pribadi promosi penjualan…&#39;, &#39;ABSTRAK Tujuan penelitian peran service performance climate organization parsial simultan untuk…&#39;, &#39;Penelitian dilatarbelakangi kesulitan siswa menuangkan karya tulis puisi kurangnya pemanfaatan medium dalam…&#39;, &#39;ABSTRAK Abstrak Penelitian mengkaji bentuk kalimat analitis kontradiktif sintesis rubrik citizen reporter surat kabar Harian…&#39;, &#39;ABSTRAK Produksi garam krosok Salt House kualitas rendah segi fisik bersih…&#39;, &#39;Penelitian bertujuan meneliti penggambaran representasi promosi video pariwisata Lombok akun YouTube resmi pariwisata Indonesia Analasis…&#39;, &#39;ANALISIS BAHASA FIGURATIF YANG DIGUNAKAN DALAM LYRIK TERPILIH DARI LAGU KATY PERRY R.Ayu Suci Istighfar Aini Program Studi Bahasa Inggris&#39;, &#39;Abstrak Tujuan penelitian Hambatan Komunikasi Antar Budaya Mahasiswa Papua Madura deskriptif Mahasiswa Papua…&#39;, &#39;ABSTRAK Faktor-Faktor Mempengaruhi Minat Nasabah Membuka Rekening Tabungan Mantab Sidogiri Cabang Blega Pada zaman modern…&#39;, &#39;ABSTRAK Tanah Madura didominasi kompleks tanah mediteran merah berbahan induk batu kapur batu pasir Sehingga perhatian…&#39;, &#39;ABSTRAK Sari Meliya Intan ... Pengembangan Karakter Plot Cerpen Alice Munro Bear Came over Mountain Tesis.…&#39;, &#39;Hotel syariah hotel menjalankan kegiatan bisnis operasionalnya berdasarkan prinsip syariah Salah hotel syariah ialah…&#39;, &#39;Penelitian bertujuan pengaruh Operating Margin Kualitas Aktiva Produktif Financing Deposit Ratio…&#39;, &#39;ABSTRAK ANALISIS STRATEGI FUNDRAISING LEMBAGA AMIL ZAKAT DALAM MENDAPATKAN MUZAKKI MUNFAQIN Studi Kasus Lazismu Pamekasan Lazismu pamekasan salah…&#39;, &#39;Penelitian judul Analisis Penerapan Sistem Penjaminan Halal Produk Makanan Minuman Berbahan Dasar Cokelat Pada Kampung Coklat Blitar…&#39;, &#39;ABSTRAK Kebahagiaan wisatawan domestik diraih salah satunya petualangan tantangan mendaki gunung…&#39;, &#39;Pengendalian kualitas upaya mempertahankan meningkatkan kualitas produk sesuai sesuai dengan…&#39;, &#39;Peminjaman dana sistem online masyarakat dianggap praktis rumit Setelah persyaratan dipenuhi masyarakat&#39;, &#39;Ambar Kusuma  Pengaruh Gratitude Tehadap Kepuasan Hidup Pada Komunitas HIV/AIDS Friendship Plus Sebaya Kediri Skripsi Program Studi Psikologi&#39;, &#39;ABSTRAK Minimarket pasar modern pasar swalayan memiliki kasir Dengan perubahan…&#39;, &#39;Handayanie  Pengaruh Motivasi Belanja Hedonis Emosi Positif Terhadap Impulsive Buying Remaja Akhir Skripsi Program Studi…&#39;, &#39;ABSTRAK Handayanie  Pengaruh Motivasi Belanja Hedonis Emosi Positif Terhadap Impulsive Buying Skripsi Program Studi Psikologi Fakultas…&#39;, &#39;Penelitian latar belakangi perangkat pembelajaran sekolah format KTSP kurikulum  sesuai…&#39;, &#39;Garam salah komoditas perekonomian kawasan pesisir Proses produksi garam metode tradisional faktor…&#39;, &#39;Kebutuhan garam Indonesia seiring bertambahnya penduduk dimanfaatkan garam konsumsi industri meningkat Produksi garam indonesia…&#39;, &#39;Penelitian lapangan bertujuan bentuk pelindungan konsumen pencantuman label halal sertifikasi LPPOM&#39;, &#39;Tujuan penelitian kemampuan jenis kesalahan siswa menyelesaikan HOTS Penelitian penilitian…&#39;, &#39;ABSTRAK Kabupaten Sampang salah kabupaten terletak Pulau Madura.Kabupaten Sampang memiliki potensi sumberdaya alam menunjang…&#39;, &#39;Pola tanam teknik petani menentukan jenis tanam usaha taninya Pamekasan umumnya…&#39;, &#39;ABSTRAK Kewirausahaan kemampuan menciptakan berpikir kreatif bertindak inovatif menciptakan peluang Konsep dan…&#39;, &#39;Penelitian dilatar belakangi dunia keuangan islam penerapan akad syariah dunia technologi finansial Kandang.in…&#39;, &#39;Fortifikasi metode penambahan mikronutrien bahan makanan tujuan utama meningkatkan gizi suatu…&#39;, &#39;Produk ramah lingkungan mengurangi pencemaran lingkungan konsumsi jangka Tujuan penelitian adalah…&#39;, &#39;Penelitian bertujuan mendeskripsikan faktor mempengaruhi kemampuan berpikir kriti metakognisi siswa materi pemanasan global Penelitian ini…&#39;, &#39;Zakat salah Hukum Islam mengalami perkembangan sesuai zamannya zakat bentuk ibadah yang…&#39;, &#39;Tsunami gelombang pasang dibangkitkan gempa tektonik letusan gunung lautan tanah longsor Bencana yang…&#39;, &#39;Abstrak Penelitian bertujuan pengaruh adversity quotient intensi berwirausaha masyarakat pesisir Desa Ambunten Timur Kecamatan…&#39;, &#39;Penelitian bertujuan pengunaan medium modul bahan pewarna batik banyuates madura siswa kelas VIII…&#39;, &#39;ABSTRAK MODEL PEMBERDAYAAN SANTRIPRENEUR DALAM MENINGKATKAN PEREKONOMIAN PESANTREN Studi Kasus Al-Amien Prenduan Sumenep Madura Pulau Madura dikenal dengan…&#39;, &#39;ABSTRAK Abstrak Peribahasa kalimat penggalan kalimat bersifat turun-temurun makna khusus pemakaian bahasa.…&#39;, &#39;Penelitian bertujuan mengidentifikasi persentase prose kemampuan berpikir kriti siswa kelas Penelitian jenis penelitian campuran…&#39;, &#39;Tambak garam lahan penentu pengaruh faktor produksi garam Habitat mikroalga hidup ditempat yang…&#39;, &#39;Tujuan penelitian strategi retorika penutur amal masjid jalanan Kecamatan Tanah Merah Kecamatan…&#39;, &#39;Sepak bola salah olahraga digemari remaja belahan dunia abad…&#39;, &#39;Pesisir Pantai Kenjeran kawasan potensi wisata ekonomi ekologis banyaknya aktivitas nelayan Kegiatan menyebabkan…&#39;, &#39;ABSTRACT Nafilatun Nasuha  Analysis Personal Pronouns Donald Trump Speech Critical Discourse Analysis Thesis.English Study Program&#39;, &#39;Mikroplastik sampah plastik mengalami degradasi terurai partikel-partikel plastik Keberadaan mikroplastik&#39;, &#39;Penelitian bertujuan kelayakan keterbacaan respons siswa Lembaran kerja siswa Menggunakan model pengembangan meliputi Define&#39;, &#39;Perbedaan harga diterapkan pemilik jasa transportasi objek wisata kerap kebiasaan masyarakat Sesuatu kebiasaan…&#39;, &#39;ABSTRAK Remoh blater diadakan berkumpulnya blater desa Kabupaten Bangkalan keuntungan dari…&#39;, &#39;Penduduk Indonesia mayoritas beragama Islam mewajibkan umat muslim mengkonsumsi produk bersertifikasi halal Sebuah produk bersertifikasi halal MUI…&#39;, &#39;Perguruan Tinggi salah jenjang pendidikan Sekolah Menengah Atas menyeleksi penerimaan mahasiswa berdasarkan jalur prestasi&#39;, &#39;ABSTRAK Tsunami bencana ancaman masyarakat wilayah pesisir.Tsunami kerusakan daratan…&#39;, &#39;Apie Indo Karunia perusahaan bidang industri manufaktur memproduksi produk berbahan dasar logam Produk diproduksi…&#39;, &#39;Penelitian bertujuan persentase miskonsepsi siswa faktor-faktor penyebab miskonsepsi siswa Penelitian ini…&#39;, &#39;ABSTRAK Pengaruh Integrated Marketing Communication Kualitas Layanan Terhadap Kepuasan Peziarah Pada Makam Religi Bangkalan Studi Kasus Makam Syaikhona…&#39;, &#39;Financial Distress ketidakmampuan perusahaan memenuhi kewajibannya Analisis bahan evaluasi perusahaan memperbaiki kinerja perusahaan…&#39;, &#39;Rajungan Portunus pelagicus komoditas nilai ekonomi permintaan pasar luar…&#39;, &#39;ABSTRAK Rendra Fresty Pratiwi  Program Studi Psikologi Perbedaan Strategi Coping Ditinjau Tipe Kepribadian Ekstrovert Introvert Pada Anak…&#39;, &#39;Meningkatnya kandungan karbon dioksida udara menyebabkan kenaikan suhu bumi efek rumah kaca/pemanasan global Penelitian bertujuan…&#39;, &#39;Sentra Industri Songkok sekumpulan unit usaha menghasilkan produk sejenis menyerap tenaga kerja local …&#39;, &#39;ABSTRAK LITERASI HALAL SERTIKASI HALAL PADA PELAKU KRIPIK SINGKONG MANDING Halal Lifestyle Indonesia ini…&#39;, &#39;Penelitian berjudul Bias Gender Jurnalis Perempuan Media Massa Kota Bangkalan meneliti motivasi memilih profesi jurnalis diskriminasi&#39;, &#39;Skripsi berjudul tinjauan sosiologi hukum Islam praktik jual beli bahan pokok makanan tempo studi kasus…&#39;, &#39;ABSTRAK ANALISIS MANAJEMEN RISIKO PEMBIAYAAN DANA TALANGAN UMROH PADA TABUNG HAJI UMROH YULIANTO FOUNDATION SURABAYA Tabung Haji Umroh…&#39;, &#39;ABSTRAK Nurul Habibah. Program Studi Sosiologi Fakultas Ilmu Sosial Budaya Universitas Trunojoyo Madura Pertukaran Sosial Tradisi Timang Manten…&#39;, &#39;ABSTRAK Vikki Hidayat  Pengaruh Kualitas Kehidupan Kerja Kepuasan Kerja Petani Garam Kecamatan Kalianget Sumenep Skripsi Program…&#39;, &#39;Abstrak Penelitian bertujuan motivasi berprestasi petambak garam Penelitian metode penelitian deskriptif kualitatif pendekatan fenomenologi.…&#39;, &#39;Abstrak Tujuan penelitian gambaran pendampingan orang prose belajar anak persepsi anak…&#39;, &#39;ABSTRAK Ririn Octaviani  Pengaruh Regulasi Diri Prokrastinasi Akademik Mahasiswa Bidikmisi Melampaui Batas Masa Studi Normal&#39;, &#39;Sungai Bancaran sungai Kabupaten Bangkalan merupakanperairan aktivitas manusia perairan sangat…&#39;, &#39;ABSTRAK Pada tahap-tahap produksi garam terbentuk lapisan kristal tipi bentuk dimensi yang…&#39;, &#39;Skripsi bejudul Analisis Investasi Syariah tinjau Al-Maslahah As-Salam Kecamatan Mojoagung Kabupaten Jombang Penelitian ini…&#39;, &#39;Ziarah makam kuburan tradisi leluhur kepulauan Indonesia…&#39;, &#39;Dianis industri rumah tangga memproduksi terasi tradisional hasil nelayan Desa Macajah menambah pendapatan yang…&#39;, &#39;Abstrak Zahriadi. Program Studi Sosiologi Fakultas Ilmu Sosial ilmu Budaya Universitas Trunojoyo Madura Pertukaran Sosial Tradisi Remo Studi…&#39;, &#39;Information Retrieval pengambilan informasi tersimpan didalam dokumen berisikan konteks dokumen Adanya memiliki pengaruh…&#39;, &#39;ABSTRAK Rinda Pradina  Program Studi Ilmu Komunikasi Fakultas Ilmu Sosial Ilmu Budaya Universitas Trunojoyo Madura Supportiveness Single…&#39;, &#39;Investasi saham memiliki resiko kerugian pergerakan harga saham menentu meminimalkan resiko…&#39;, &#39;Lingkungan pantai wilayah mengalami perubahan bertemunya faktor berasal daratan dari…&#39;, &#39;Penelitian bertujuan menghasilkan perangkat pembelajaran kooperatif tipe mata pelajaran dasar desain grafis berbantuan medium kahoot kelas…&#39;, &#39;Desa Saobi Pulau Sapapan Saobi Bungin Nyarat kawasan memiliki ekosistem terumbu karang keberadaan ekosistem memiliki potensi…&#39;, &#39;Kegiatan pembelajaran medium pembelajaran sederhana medium dimensi gambar poster media…&#39;, &#39;Penelitian bertujuan Manajemen Konflik Perempuan Madura Yang Memutuskan Untuk Kuliah Studi Kasus Perempuan Madura Yang Hidup Dalam…&#39;, &#39;Permasalahan ditemui produksi jagung dilahan pertanian Kecamatan Socah tergolong rendah dibandingkan penghasil jagung…&#39;, &#39;Siti Komariyah  Perbedaan kebahagiaan pasangan pernikahan Skripsi Program Studi Psikologi Fakultas Ilmu Sosial Ilmu…&#39;, &#39;Abstrak Dalam menyediakan hijauan pakan ternak potensi hijauan kebutuhan pakan optimal pakan digunakan…&#39;, &#39;Skripsi bertujuan menganalisis Stagnansi hubungan kelembagaan kewenangan komisi pemberantasan korupsi kepolisian Adanya fakta perseteruan antara…&#39;, &#39;ABSTRAK Afiyah Nurisnaini  Program Studi Psikologi Hubungan Strategi Coping Psychological Well Being Narapidana Lansia Lembaga Pemasyarakatan…&#39;, &#39;Penelitian bertujuan menganalisis kemampuan pemecahan siswa menyelesaikan kemampuan pemecahan Jenis penelitian…&#39;, &#39;Halal Value Chain upaya terintegrasi industri input produksi distribusi pemasaran komsumsi Dalam menghasilkan produk halal&#39;, &#39;ABSTRAK makanan dikonsumsi masyarakat dunia Indonesia seringkali menggantikan…&#39;, &#39;Tanaman kolesom Talinum triangulare Jacq Willd memiliki keunggulan bahan baku obat umbi pucuknya sebagai…&#39;, &#39;Penelitian mengambil objek Adiluhung Saranasegara Indonesia menguji pengaruh lingkungan kerja fisik disiplin Kerja…&#39;, &#39;Perairan Soccah lokasi nelayan mencari ikan organisme laut udang rebon Acetes Udang rebon Acetes&#39;, &#39;Abstrak Rian Pandi Pranata  Program Studi Sosiologi Fakultas Ilmu Sosial Ilmu Budaya Universitas Trunojoyo Madura Analisis wacana…&#39;, &#39;Topik deteksi objek menarik perhatian perkembangan teknologi bidang computer vision Deteksi objek memiliki peranan sangat…&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>lalu pada kode diatas digunakan untuk menghilangkan kata hubung. kode diatas menggunakan library sastrawi agar dapat berkerja, sastrawi juga digunakan karena library ini support untuk kata kata bahasa indonesia.</p>
+<p><strong>MENGHILANGKAN TANDA BACA</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Sastrawi.StopWordRemover.StopWordRemoverFactory</span> <span class="kn">import</span> <span class="n">StopWordRemoverFactory</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="n">factory</span> <span class="o">=</span> <span class="n">StopWordRemoverFactory</span><span class="p">()</span>
+<span class="n">dokumenst</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">dokumenstop</span><span class="p">:</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">))</span>
+    <span class="n">dokumenst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">dokumenst</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;abstrac&#39;, &#39;Makanan minuman khas ciri kekayaan sumberdaya alam daerah memaksimalkan pariwisata Pulau Giligenting ditunjang dengan…&#39;, &#39;ABSTRAK Akhirakhir maraknya pencurian kayu milik negara hutan masyarakat perumusan sanksi pidana dalam…&#39;, &#39;Penelitian bertujuan pengaruh motivasi kerja mediator self efficacy lingkungan kerja prestasi kerja…&#39;, &#39;Kedai kopi sampah salah usaha mencerminkan pemberdayaan masyarakat Kedai Kopi Sampah nama Kedai…&#39;, &#39;Abstrak Tenaga kerja orang pekerjaan menghasilkan barang jasa memenuhi kebutuhan sendiri…&#39;, &#39;Tujuan penelitian makna Bhubuhan diartikan bentuk pelunasan hutang pernikahan Madura terjadi…&#39;, &#39;Penelitian dilatar belakangi Bank Wakaf Mikro Sumber Barokah Denanyar Jombang salah BWM…&#39;, &#39;Penelitian bertujuan ratarata hasil kemampuan berpikir kriti siswa materi pemanasan global berbasis pendekatan socioscientific…&#39;, &#39;Identifikasi atribut pejalan kaki salah penelitian dikembangkan peneliti computer vision fungsinya dianggap penting…&#39;, &#39;Abstrak Aprilia Puji Lestari  Program Studi Sosiologi Fakultas Ilmu Sosial Ilmu Budaya Universitas Trunojoyo Madura…&#39;, &#39;Musha rakah Mutana akad pembiayaan muamalah Akad memiliki kriteria khusus kepemilikan asset barang modal bisa…&#39;, &#39;Perairan Soccah lokasi nelayan mencari ikan organisme laut udang rebon Acetes Udang rebon Acetes&#39;, &#39;Abstrak Rian Pandi Pranata  Program Studi Sosiologi Fakultas Ilmu Sosial Ilmu Budaya Universitas Trunojoyo Madura Analisis wacana…&#39;, &#39;Topik deteksi objek menarik perhatian perkembangan teknologi bidang computer vision Deteksi objek memiliki peranan sangat…&#39;, &#39;Sulfi Amalia  English Study Program Analysis Category Shift English Translation Thesis Abstract Law…&#39;, &#39;Tujuan penelitian pengembangan ekonomi lokal wisata Jati Desa Goranggareng Kecamatan Nguntoronadi Kabupaten Magetan Pengembangan…&#39;, &#39;Mayarakat relawan Indonesia Surabaya terbentuk salah wadah relawan sosial kemanuisaan bantuan pamrih bentuk…&#39;, &#39;Siti Komariyah  Perbedaan kebahagiaan pasangan pernikahan Skripsi Program Studi Psikologi Fakultas Ilmu Sosial Ilmu…&#39;, &#39;Abstrak Dalam menyediakan hijauan pakan ternak potensi hijauan kebutuhan pakan optimal pakan digunakan…&#39;, &#39;Skripsi bertujuan menganalisis Stagnansi hubungan kelembagaan kewenangan komisi pemberantasan korupsi kepolisian Adanya fakta perseteruan antara…&#39;, &#39;Penelitian bertujuan self compassion survivor HIVAIDS viral load terdeteksi Sejalan tujuan penelitian maka…&#39;, &#39;ABSTRAK Penelitian bertujuan Untuk bauran promosi periklanan penjualan pribadi promosi penjualan…&#39;, &#39;ABSTRAK Tujuan penelitian peran service performance climate organization parsial simultan untuk…&#39;, &#39;ABSTRAK Tujuan penelitian strategi bertahan hidup buruh tani wanita menghadapi…&#39;, &#39;ABSTRAK Penelitian bertujuan gambaran intimacy ayah single parent anak perempuannya Metode penelitian penelitian…&#39;, &#39;Tujuan penelitian mengambarkan bentuk perlawanan masyarakat Bedug Desa…&#39;, &#39;Information Retrieval pengambilan informasi tersimpan didalam dokumen berisikan konteks dokumen Adanya memiliki pengaruh…&#39;, &#39;ABSTRAK Rinda Pradina  Program Studi Ilmu Komunikasi Fakultas Ilmu Sosial Ilmu Budaya Universitas Trunojoyo Madura Supportiveness Single…&#39;, &#39;Investasi saham memiliki resiko kerugian pergerakan harga saham menentu meminimalkan resiko…&#39;, &#39;Ziarah makam kuburan tradisi leluhur kepulauan Indonesia…&#39;, &#39;Dianis industri rumah tangga memproduksi terasi tradisional hasil nelayan Desa Macajah menambah pendapatan yang…&#39;, &#39;Abstrak Zahriadi Program Studi Sosiologi Fakultas Ilmu Sosial ilmu Budaya Universitas Trunojoyo Madura Pertukaran Sosial Tradisi Remo Studi…&#39;, &#39;Sungai Bancaran sungai Kabupaten Bangkalan merupakanperairan aktivitas manusia perairan sangat…&#39;, &#39;ABSTRAK Pada tahaptahap produksi garam terbentuk lapisan kristal tipi bentuk dimensi yang…&#39;, &#39;Skripsi bejudul Analisis Investasi Syariah tinjau AlMaslahah AsSalam Kecamatan Mojoagung Kabupaten Jombang Penelitian ini…&#39;, &#39;Lingkungan pantai wilayah mengalami perubahan bertemunya faktor berasal daratan dari…&#39;, &#39;Penelitian bertujuan menghasilkan perangkat pembelajaran kooperatif tipe mata pelajaran dasar desain grafis berbantuan medium kahoot kelas…&#39;, &#39;Desa Saobi Pulau Sapapan Saobi Bungin Nyarat kawasan memiliki ekosistem terumbu karang keberadaan ekosistem memiliki potensi…&#39;, &#39;abstrac&#39;, &#39;Makanan minuman khas ciri kekayaan sumberdaya alam daerah memaksimalkan pariwisata Pulau Giligenting ditunjang dengan…&#39;, &#39;ABSTRAK Akhirakhir maraknya pencurian kayu milik negara hutan masyarakat perumusan sanksi pidana dalam…&#39;, &#39;Penelitian bertujuan pengaruh motivasi kerja mediator self efficacy lingkungan kerja prestasi kerja…&#39;, &#39;Penelitian bertujuan pengaruh pemberian dosis pupuk kandang sapi pertumbuhan kandungan serat pangan daun tanaman kolesom…&#39;, &#39;YULI WEDAYANTI  Program Studi Sosiologi Fakultas Ilmu Sosial Ilmu Budaya Universitas Trunojoyo Madura Skripsi Makna…&#39;, &#39;Abstrak Peran guru melestarikan kebudayaan masyarakat guru memiliki perana ditengahtengah masyarakat…&#39;, &#39;Laut Jawa Wilayah Pengelolaan Perikanan perairan potensial habitat kelompok jenis ikan pelagis…&#39;, &#39;Penelitian bertujuan membahas jenis tanda metadiscourse metadiscourse pidato Thunberg Penelitian metode…&#39;, &#39;Siti Maghfuro  Program Studi Sosiologi Fakultas Ilmu Sosial Ilmu Budaya Universitas Trunojoyo Madura Memaknai Gaya Hidup Penikmat Kopi…&#39;, &#39;MSDs Musculoskeletal Disorders gangguan cidera jaringan lunak tubuh otot tendon ligament Cidera terjadi…&#39;, &#39;ABSTRAK Tanaman Kolesom Talinum triangulare Jacq Willd jenis tanaman hortikultura hasil panen umbi pucuk berkhasiat…&#39;, &#39;Pulau Gili Ketapang salah daerah pusat perikanan tangkap Kabupaten Probolinggo Daerah memiliki luas wilayah&#39;, &#39;Biochar padatan kaya kandungan karbon hasil konversi biomassa prose pirolisis Pencampuran biochar pupuk kandang…&#39;, &#39;Tujuan Penelitian respon orang siswa kelas rendah pembelajaran daring permasalahan dihadapi…&#39;, &#39;Gerakan literasi mengalami permasalahan ketersediaan pengelolaan sumberdaya Berkaitan skripsi bertujuan untuk…&#39;, &#39;Penelitian judul Public Awareness Masyarakat Madura Konsep Halal Tourism Pariwisata Berkearifan Lokal bertujuan mengetahui…&#39;, &#39;Indonesia potensi pengembangan Industri pariwisata dinilai menjanjikan Banyaknya keberagaman destinasi contohnya wisata alam wisata buatan maupun…&#39;, &#39;ABSTRAK Analisis Peran Pesantren Dalam Pengembangan Insna Entrepreneur Studi Kasus Pondok Pesantren Darul Hikmah Burneh Bangkalan Kewirausahaan memiliki…&#39;, &#39;Abstrak Farida Yulistiana  Program Studi Sosiologi Pertukaran sosial tradisi sape toktok Tujuan penelitian adalah…&#39;, &#39;Rumah sakit salah instansi bidang pelayanan jasa kesehatan beroprasi penuh hari…&#39;, &#39;Tujuan penelitian Beban Operasional Pendapatan Operasional BOPO Loan Deposit Ratio Return&#39;, &#39;Literasi zakat pengetahuan keterampilan keyakinan mempengaruhi sikap perilaku meningkatkan kualitas pengambilan keputusan…&#39;, &#39;Penelitian berlokasikan Semen Indonesia Pabrik Tuban unit kerja packer Tuban Terdapat jenis kerusakan mesin yang…&#39;, &#39;Nilai perusahaan terpenting investor calon investor menanamkan dananya perusahaan Semakin berkembangnya…&#39;, &#39;Febrianti  Program Studi Sosiologi Fakultas Ilmu Sosial Ilmu Budaya Universitas Trunojoyo Madura Jaringan Sosial Pengusaha Kerajinan Limbah…&#39;, &#39;Penelitian bertujuan hubungan prokrastinasi akademik burnout perilaku plagiarisme mahasiswa psikologi Subjek penelitian adalah…&#39;, &#39;ABSTRAK Tujuan penelitian pengaruh faktor kualitas produk harga keputusan pembelian parsial…&#39;, &#39;Klasifikasi citra prose pengelompokan piksel citra kelas memiliki batasan Setiap kelas memiliki label…&#39;, &#39;ABSTRAK Penelitian bertujuan perhitungan tingkat hunian kamar Hotel Panglima Sampang analisis cost volume profit…&#39;, &#39;Abstrak Tujuan penelitian fenomena dialami Kelompok Dukungan Sebaya pasien ODHA Orang HIVAIDS&#39;, &#39;ABSTRAK Uswatun Hasanah  Pengaruh Pelatihan Kompensasi Terhadap Produktivitas Kerja Dengan Kepuasan Kerja Sebagai Variabel intervening Pada PDAM Sumber…&#39;, &#39;Pengadilan agama salah kekuasaan kehakiman Indonesia tugas pokok pengadilan agama menerima memeriksa mengadili serta…&#39;, &#39;ABSTRAK Tujuan utama penelitian fotografi komunikasi pemasaran menarik minat pengunjung wisata Bukit…&#39;, &#39;Kedai kopi sampah salah usaha mencerminkan pemberdayaan masyarakat Kedai Kopi Sampah nama Kedai…&#39;, &#39;Abstrak Tenaga kerja orang pekerjaan menghasilkan barang jasa memenuhi kebutuhan sendiri…&#39;, &#39;Tujuan penelitian makna Bhubuhan diartikan bentuk pelunasan hutang pernikahan Madura terjadi…&#39;, &#39;Penelitian dilatar belakangi Bank Wakaf Mikro Sumber Barokah Denanyar Jombang salah BWM…&#39;, &#39;Identifikasi atribut pejalan kaki salah penelitian dikembangkan peneliti computer vision fungsinya dianggap penting…&#39;, &#39;Penelitian bertujuan ratarata hasil kemampuan berpikir kriti siswa materi pemanasan global berbasis pendekatan socioscientific…&#39;, &#39;Abstrak Aprilia Puji Lestari  Program Studi Sosiologi Fakultas Ilmu Sosial Ilmu Budaya Universitas Trunojoyo Madura…&#39;, &#39;Musha rakah Mutana akad pembiayaan muamalah Akad memiliki kriteria khusus kepemilikan asset barang modal bisa…&#39;, &#39;Sulfi Amalia  English Study Program Analysis Category Shift English Translation Thesis Abstract Law…&#39;, &#39;Tujuan penelitian pengembangan ekonomi lokal wisata Jati Desa Goranggareng Kecamatan Nguntoronadi Kabupaten Magetan Pengembangan…&#39;, &#39;Mayarakat relawan Indonesia Surabaya terbentuk salah wadah relawan sosial kemanuisaan bantuan pamrih bentuk…&#39;, &#39;ABSTRAK Tujuan penelitian strategi bertahan hidup buruh tani wanita menghadapi…&#39;, &#39;ABSTRAK Penelitian bertujuan gambaran intimacy ayah single parent anak perempuannya Metode penelitian penelitian…&#39;, &#39;Tujuan penelitian mengambarkan bentuk perlawanan masyarakat Bedug Desa…&#39;, &#39;Penelitian bertujuan self compassion survivor HIVAIDS viral load terdeteksi Sejalan tujuan penelitian maka…&#39;, &#39;ABSTRAK Penelitian bertujuan Untuk bauran promosi periklanan penjualan pribadi promosi penjualan…&#39;, &#39;ABSTRAK Tujuan penelitian peran service performance climate organization parsial simultan untuk…&#39;, &#39;Penelitian dilatarbelakangi kesulitan siswa menuangkan karya tulis puisi kurangnya pemanfaatan medium dalam…&#39;, &#39;ABSTRAK Abstrak Penelitian mengkaji bentuk kalimat analitis kontradiktif sintesis rubrik citizen reporter surat kabar Harian…&#39;, &#39;ABSTRAK Produksi garam krosok Salt House kualitas rendah segi fisik bersih…&#39;, &#39;Penelitian bertujuan meneliti penggambaran representasi promosi video pariwisata Lombok akun YouTube resmi pariwisata Indonesia Analasis…&#39;, &#39;ANALISIS BAHASA FIGURATIF YANG DIGUNAKAN DALAM LYRIK TERPILIH DARI LAGU KATY PERRY RAyu Suci Istighfar Aini Program Studi Bahasa Inggris&#39;, &#39;Abstrak Tujuan penelitian Hambatan Komunikasi Antar Budaya Mahasiswa Papua Madura deskriptif Mahasiswa Papua…&#39;, &#39;ABSTRAK FaktorFaktor Mempengaruhi Minat Nasabah Membuka Rekening Tabungan Mantab Sidogiri Cabang Blega Pada zaman modern…&#39;, &#39;ABSTRAK Tanah Madura didominasi kompleks tanah mediteran merah berbahan induk batu kapur batu pasir Sehingga perhatian…&#39;, &#39;ABSTRAK Sari Meliya Intan  Pengembangan Karakter Plot Cerpen Alice Munro Bear Came over Mountain Tesis…&#39;, &#39;Hotel syariah hotel menjalankan kegiatan bisnis operasionalnya berdasarkan prinsip syariah Salah hotel syariah ialah…&#39;, &#39;Penelitian bertujuan pengaruh Operating Margin Kualitas Aktiva Produktif Financing Deposit Ratio…&#39;, &#39;ABSTRAK ANALISIS STRATEGI FUNDRAISING LEMBAGA AMIL ZAKAT DALAM MENDAPATKAN MUZAKKI MUNFAQIN Studi Kasus Lazismu Pamekasan Lazismu pamekasan salah…&#39;, &#39;Penelitian judul Analisis Penerapan Sistem Penjaminan Halal Produk Makanan Minuman Berbahan Dasar Cokelat Pada Kampung Coklat Blitar…&#39;, &#39;ABSTRAK Kebahagiaan wisatawan domestik diraih salah satunya petualangan tantangan mendaki gunung…&#39;, &#39;Pengendalian kualitas upaya mempertahankan meningkatkan kualitas produk sesuai sesuai dengan…&#39;, &#39;Peminjaman dana sistem online masyarakat dianggap praktis rumit Setelah persyaratan dipenuhi masyarakat&#39;, &#39;Ambar Kusuma  Pengaruh Gratitude Tehadap Kepuasan Hidup Pada Komunitas HIVAIDS Friendship Plus Sebaya Kediri Skripsi Program Studi Psikologi&#39;, &#39;ABSTRAK Minimarket pasar modern pasar swalayan memiliki kasir Dengan perubahan…&#39;, &#39;Handayanie  Pengaruh Motivasi Belanja Hedonis Emosi Positif Terhadap Impulsive Buying Remaja Akhir Skripsi Program Studi…&#39;, &#39;ABSTRAK Handayanie  Pengaruh Motivasi Belanja Hedonis Emosi Positif Terhadap Impulsive Buying Skripsi Program Studi Psikologi Fakultas…&#39;, &#39;Penelitian latar belakangi perangkat pembelajaran sekolah format KTSP kurikulum  sesuai…&#39;, &#39;Garam salah komoditas perekonomian kawasan pesisir Proses produksi garam metode tradisional faktor…&#39;, &#39;Kebutuhan garam Indonesia seiring bertambahnya penduduk dimanfaatkan garam konsumsi industri meningkat Produksi garam indonesia…&#39;, &#39;Penelitian lapangan bertujuan bentuk pelindungan konsumen pencantuman label halal sertifikasi LPPOM&#39;, &#39;Tujuan penelitian kemampuan jenis kesalahan siswa menyelesaikan HOTS Penelitian penilitian…&#39;, &#39;ABSTRAK Kabupaten Sampang salah kabupaten terletak Pulau MaduraKabupaten Sampang memiliki potensi sumberdaya alam menunjang…&#39;, &#39;Pola tanam teknik petani menentukan jenis tanam usaha taninya Pamekasan umumnya…&#39;, &#39;ABSTRAK Kewirausahaan kemampuan menciptakan berpikir kreatif bertindak inovatif menciptakan peluang Konsep dan…&#39;, &#39;Penelitian dilatar belakangi dunia keuangan islam penerapan akad syariah dunia technologi finansial Kandangin…&#39;, &#39;Fortifikasi metode penambahan mikronutrien bahan makanan tujuan utama meningkatkan gizi suatu…&#39;, &#39;Produk ramah lingkungan mengurangi pencemaran lingkungan konsumsi jangka Tujuan penelitian adalah…&#39;, &#39;Penelitian bertujuan mendeskripsikan faktor mempengaruhi kemampuan berpikir kriti metakognisi siswa materi pemanasan global Penelitian ini…&#39;, &#39;Zakat salah Hukum Islam mengalami perkembangan sesuai zamannya zakat bentuk ibadah yang…&#39;, &#39;Tsunami gelombang pasang dibangkitkan gempa tektonik letusan gunung lautan tanah longsor Bencana yang…&#39;, &#39;Abstrak Penelitian bertujuan pengaruh adversity quotient intensi berwirausaha masyarakat pesisir Desa Ambunten Timur Kecamatan…&#39;, &#39;Penelitian bertujuan pengunaan medium modul bahan pewarna batik banyuates madura siswa kelas VIII…&#39;, &#39;ABSTRAK MODEL PEMBERDAYAAN SANTRIPRENEUR DALAM MENINGKATKAN PEREKONOMIAN PESANTREN Studi Kasus AlAmien Prenduan Sumenep Madura Pulau Madura dikenal dengan…&#39;, &#39;ABSTRAK Abstrak Peribahasa kalimat penggalan kalimat bersifat turuntemurun makna khusus pemakaian bahasa…&#39;, &#39;Penelitian bertujuan mengidentifikasi persentase prose kemampuan berpikir kriti siswa kelas Penelitian jenis penelitian campuran…&#39;, &#39;Tambak garam lahan penentu pengaruh faktor produksi garam Habitat mikroalga hidup ditempat yang…&#39;, &#39;Tujuan penelitian strategi retorika penutur amal masjid jalanan Kecamatan Tanah Merah Kecamatan…&#39;, &#39;Sepak bola salah olahraga digemari remaja belahan dunia abad…&#39;, &#39;Pesisir Pantai Kenjeran kawasan potensi wisata ekonomi ekologis banyaknya aktivitas nelayan Kegiatan menyebabkan…&#39;, &#39;ABSTRACT Nafilatun Nasuha  Analysis Personal Pronouns Donald Trump Speech Critical Discourse Analysis ThesisEnglish Study Program&#39;, &#39;Mikroplastik sampah plastik mengalami degradasi terurai partikelpartikel plastik Keberadaan mikroplastik&#39;, &#39;Penelitian bertujuan kelayakan keterbacaan respons siswa Lembaran kerja siswa Menggunakan model pengembangan meliputi Define&#39;, &#39;Perbedaan harga diterapkan pemilik jasa transportasi objek wisata kerap kebiasaan masyarakat Sesuatu kebiasaan…&#39;, &#39;ABSTRAK Remoh blater diadakan berkumpulnya blater desa Kabupaten Bangkalan keuntungan dari…&#39;, &#39;Penduduk Indonesia mayoritas beragama Islam mewajibkan umat muslim mengkonsumsi produk bersertifikasi halal Sebuah produk bersertifikasi halal MUI…&#39;, &#39;Perguruan Tinggi salah jenjang pendidikan Sekolah Menengah Atas menyeleksi penerimaan mahasiswa berdasarkan jalur prestasi&#39;, &#39;ABSTRAK Tsunami bencana ancaman masyarakat wilayah pesisirTsunami kerusakan daratan…&#39;, &#39;Apie Indo Karunia perusahaan bidang industri manufaktur memproduksi produk berbahan dasar logam Produk diproduksi…&#39;, &#39;Penelitian bertujuan persentase miskonsepsi siswa faktorfaktor penyebab miskonsepsi siswa Penelitian ini…&#39;, &#39;ABSTRAK Pengaruh Integrated Marketing Communication Kualitas Layanan Terhadap Kepuasan Peziarah Pada Makam Religi Bangkalan Studi Kasus Makam Syaikhona…&#39;, &#39;Financial Distress ketidakmampuan perusahaan memenuhi kewajibannya Analisis bahan evaluasi perusahaan memperbaiki kinerja perusahaan…&#39;, &#39;Rajungan Portunus pelagicus komoditas nilai ekonomi permintaan pasar luar…&#39;, &#39;ABSTRAK Rendra Fresty Pratiwi  Program Studi Psikologi Perbedaan Strategi Coping Ditinjau Tipe Kepribadian Ekstrovert Introvert Pada Anak…&#39;, &#39;Meningkatnya kandungan karbon dioksida udara menyebabkan kenaikan suhu bumi efek rumah kacapemanasan global Penelitian bertujuan…&#39;, &#39;Sentra Industri Songkok sekumpulan unit usaha menghasilkan produk sejenis menyerap tenaga kerja local …&#39;, &#39;ABSTRAK LITERASI HALAL SERTIKASI HALAL PADA PELAKU KRIPIK SINGKONG MANDING Halal Lifestyle Indonesia ini…&#39;, &#39;Penelitian berjudul Bias Gender Jurnalis Perempuan Media Massa Kota Bangkalan meneliti motivasi memilih profesi jurnalis diskriminasi&#39;, &#39;Skripsi berjudul tinjauan sosiologi hukum Islam praktik jual beli bahan pokok makanan tempo studi kasus…&#39;, &#39;ABSTRAK ANALISIS MANAJEMEN RISIKO PEMBIAYAAN DANA TALANGAN UMROH PADA TABUNG HAJI UMROH YULIANTO FOUNDATION SURABAYA Tabung Haji Umroh…&#39;, &#39;ABSTRAK Nurul Habibah Program Studi Sosiologi Fakultas Ilmu Sosial Budaya Universitas Trunojoyo Madura Pertukaran Sosial Tradisi Timang Manten…&#39;, &#39;ABSTRAK Vikki Hidayat  Pengaruh Kualitas Kehidupan Kerja Kepuasan Kerja Petani Garam Kecamatan Kalianget Sumenep Skripsi Program…&#39;, &#39;Abstrak Penelitian bertujuan motivasi berprestasi petambak garam Penelitian metode penelitian deskriptif kualitatif pendekatan fenomenologi…&#39;, &#39;Abstrak Tujuan penelitian gambaran pendampingan orang prose belajar anak persepsi anak…&#39;, &#39;ABSTRAK Ririn Octaviani  Pengaruh Regulasi Diri Prokrastinasi Akademik Mahasiswa Bidikmisi Melampaui Batas Masa Studi Normal&#39;, &#39;Sungai Bancaran sungai Kabupaten Bangkalan merupakanperairan aktivitas manusia perairan sangat…&#39;, &#39;ABSTRAK Pada tahaptahap produksi garam terbentuk lapisan kristal tipi bentuk dimensi yang…&#39;, &#39;Skripsi bejudul Analisis Investasi Syariah tinjau AlMaslahah AsSalam Kecamatan Mojoagung Kabupaten Jombang Penelitian ini…&#39;, &#39;Ziarah makam kuburan tradisi leluhur kepulauan Indonesia…&#39;, &#39;Dianis industri rumah tangga memproduksi terasi tradisional hasil nelayan Desa Macajah menambah pendapatan yang…&#39;, &#39;Abstrak Zahriadi Program Studi Sosiologi Fakultas Ilmu Sosial ilmu Budaya Universitas Trunojoyo Madura Pertukaran Sosial Tradisi Remo Studi…&#39;, &#39;Information Retrieval pengambilan informasi tersimpan didalam dokumen berisikan konteks dokumen Adanya memiliki pengaruh…&#39;, &#39;ABSTRAK Rinda Pradina  Program Studi Ilmu Komunikasi Fakultas Ilmu Sosial Ilmu Budaya Universitas Trunojoyo Madura Supportiveness Single…&#39;, &#39;Investasi saham memiliki resiko kerugian pergerakan harga saham menentu meminimalkan resiko…&#39;, &#39;Lingkungan pantai wilayah mengalami perubahan bertemunya faktor berasal daratan dari…&#39;, &#39;Penelitian bertujuan menghasilkan perangkat pembelajaran kooperatif tipe mata pelajaran dasar desain grafis berbantuan medium kahoot kelas…&#39;, &#39;Desa Saobi Pulau Sapapan Saobi Bungin Nyarat kawasan memiliki ekosistem terumbu karang keberadaan ekosistem memiliki potensi…&#39;, &#39;Kegiatan pembelajaran medium pembelajaran sederhana medium dimensi gambar poster media…&#39;, &#39;Penelitian bertujuan Manajemen Konflik Perempuan Madura Yang Memutuskan Untuk Kuliah Studi Kasus Perempuan Madura Yang Hidup Dalam…&#39;, &#39;Permasalahan ditemui produksi jagung dilahan pertanian Kecamatan Socah tergolong rendah dibandingkan penghasil jagung…&#39;, &#39;Siti Komariyah  Perbedaan kebahagiaan pasangan pernikahan Skripsi Program Studi Psikologi Fakultas Ilmu Sosial Ilmu…&#39;, &#39;Abstrak Dalam menyediakan hijauan pakan ternak potensi hijauan kebutuhan pakan optimal pakan digunakan…&#39;, &#39;Skripsi bertujuan menganalisis Stagnansi hubungan kelembagaan kewenangan komisi pemberantasan korupsi kepolisian Adanya fakta perseteruan antara…&#39;, &#39;ABSTRAK Afiyah Nurisnaini  Program Studi Psikologi Hubungan Strategi Coping Psychological Well Being Narapidana Lansia Lembaga Pemasyarakatan…&#39;, &#39;Penelitian bertujuan menganalisis kemampuan pemecahan siswa menyelesaikan kemampuan pemecahan Jenis penelitian…&#39;, &#39;Halal Value Chain upaya terintegrasi industri input produksi distribusi pemasaran komsumsi Dalam menghasilkan produk halal&#39;, &#39;ABSTRAK makanan dikonsumsi masyarakat dunia Indonesia seringkali menggantikan…&#39;, &#39;Tanaman kolesom Talinum triangulare Jacq Willd memiliki keunggulan bahan baku obat umbi pucuknya sebagai…&#39;, &#39;Penelitian mengambil objek Adiluhung Saranasegara Indonesia menguji pengaruh lingkungan kerja fisik disiplin Kerja…&#39;, &#39;Perairan Soccah lokasi nelayan mencari ikan organisme laut udang rebon Acetes Udang rebon Acetes&#39;, &#39;Abstrak Rian Pandi Pranata  Program Studi Sosiologi Fakultas Ilmu Sosial Ilmu Budaya Universitas Trunojoyo Madura Analisis wacana…&#39;, &#39;Topik deteksi objek menarik perhatian perkembangan teknologi bidang computer vision Deteksi objek memiliki peranan sangat…&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>MELAKUKAN EKSTRASI FITUR Dan MEMBUAT DOKUMEN TERM MATRIK</strong></p>
+<p>dokumen term matrix atau disingkan DTM adalah representasi dari dokumen dalam corpus. DTM akan mempresentasikan dokumen dalam struktur numerik. melalui DTM kita dapat melakukan analisis yang lebih menarik.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vect</span> <span class="o">=</span><span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="n">stop_words</span><span class="p">,</span><span class="n">max_features</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># to play with. min_df,max_df,max_features etc...</span>
+<span class="n">vect_text</span><span class="o">=</span><span class="n">vect</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">dokumenst</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vect_text</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vect_text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(185, 976)
+  (0, 1)	1.0
+  (1, 187)	0.2948600111598948
+  (1, 235)	0.2948600111598948
+  (1, 769)	0.23845280534673072
+  (1, 611)	0.2549973178800974
+  (1, 486)	0.2948600111598948
+  (1, 135)	0.2783154986265281
+  (1, 16)	0.26548257772188366
+  (1, 865)	0.26548257772188366
+  (1, 344)	0.2948600111598948
+  (1, 122)	0.2948600111598948
+  (1, 380)	0.2948600111598948
+  (1, 551)	0.2783154986265281
+  (1, 459)	0.2461321570006111
+  (2, 724)	0.30632635302825295
+  (2, 811)	0.30632635302825295
+  (2, 714)	0.30632635302825295
+  (2, 472)	0.21429074873237533
+  (2, 266)	0.30632635302825295
+  (2, 575)	0.30632635302825295
+  (2, 548)	0.30632635302825295
+  (2, 331)	0.30632635302825295
+  (2, 649)	0.30632635302825295
+  (2, 467)	0.30632635302825295
+  (2, 12)	0.30632635302825295
+  :	:
+  (183, 604)	0.30847174354610646
+  (183, 798)	0.30847174354610646
+  (183, 930)	0.22025023065650087
+  (183, 944)	0.22025023065650087
+  (183, 105)	0.21579155770897604
+  (183, 853)	0.20067133770923787
+  (183, 271)	0.4232812650034558
+  (183, 207)	0.20775770128789767
+  (183, 854)	0.22025023065650087
+  (183, 858)	0.1719774145528795
+  (183, 756)	0.1785473410374854
+  (183, 453)	0.1913969311101384
+  (183, 3)	0.12626206826194655
+  (184, 684)	0.2518115225201543
+  (184, 94)	0.22672308746020797
+  (184, 893)	0.2518115225201543
+  (184, 699)	0.23768244861151339
+  (184, 693)	0.23768244861151339
+  (184, 501)	0.23768244861151339
+  (184, 584)	0.45344617492041595
+  (184, 151)	0.5036230450403086
+  (184, 922)	0.2518115225201543
+  (184, 492)	0.1638119410673557
+  (184, 955)	0.22672308746020797
+  (184, 130)	0.22672308746020797
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/said/.local/lib/python3.9/site-packages/sklearn/feature_extraction/text.py:396: UserWarning: Your stop_words may be inconsistent with your preprocessing. Tokenizing the stop words generated tokens [&#39;baiknya&#39;, &#39;berkali&#39;, &#39;kali&#39;, &#39;kurangnya&#39;, &#39;mata&#39;, &#39;olah&#39;, &#39;sekurang&#39;, &#39;setidak&#39;, &#39;tama&#39;, &#39;tidaknya&#39;] not in stop_words.
+  warnings.warn(
+</pre></div>
+</div>
+</div>
+</div>
+<p>skor diatas merupakan skor idf. Semakin kecil nilainya maka semakin sering muncul kata tersebut dalam dokumen tersebut</p>
+</section>
+<section id="klustering-menggunakan-k-means">
+<h2>Klustering menggunakan K-Means<a class="headerlink" href="#klustering-menggunakan-k-means" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.sparse.csr</span> <span class="kn">import</span> <span class="n">csr_matrix</span>
+
+<span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">kmeans</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">vect_text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KMeans(n_clusters=4)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Kami menjadikan data menjadi 4 Kluster</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">unique</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">kmeans</span><span class="o">.</span><span class="n">labels_</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">dict_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">unique</span><span class="p">,</span> <span class="n">counts</span><span class="p">))</span>
+<span class="n">dict_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 14, 1: 10, 2: 110, 3: 51}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;cluster&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">labels_</span>
+<span class="n">centers</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span>
+
+<span class="n">kmeans</span><span class="o">.</span><span class="n">inertia_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>168.5386588310672
+</pre></div>
+</div>
+</div>
+</div>
+<p>Kemudian menampilkan yang telah terkluster</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>page</th>
+      <th>title</th>
+      <th>author</th>
+      <th>abstrac</th>
+      <th>cluster</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>page</td>
+      <td>title</td>
+      <td>author</td>
+      <td>abstrac</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.0</td>
+      <td>https://pta.trunojoyo.ac.id/</td>
+      <td>STRATEGI PENGEMBANGAN MAKANAN DAN MINUMAN KHAS...</td>
+      <td>Penulis : Mohammad Maskur</td>
+      <td>Makanan dan minuman khas merupakan ciri dari k...</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0</td>
+      <td>https://pta.trunojoyo.ac.id/</td>
+      <td>PERUMUSAN SANKSI PIDANA BAGI MASYARAKAT SEKITA...</td>
+      <td>Penulis : Moch. Steven</td>
+      <td>ABSTRAK\nAkhir-akhir ini semakin maraknya penc...</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2.0</td>
+      <td>https://pta.trunojoyo.ac.id/</td>
+      <td>Peran Teor Motivasi Herzberg Sebagai Mediator ...</td>
+      <td>Penulis : Widha Deby Andrea</td>
+      <td>Penelitian ini bertujuan untuk dapat mengetahu...</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3.0</td>
+      <td>https://pta.trunojoyo.ac.id/welcome/index/9</td>
+      <td>Model pemberdayaan ekonomi masyarakat melalui ...</td>
+      <td>Penulis : Rofiatul Zuhria</td>
+      <td>Kedai kopi sampah merupakan salah satu usaha y...</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>180</th>
+      <td>179.0</td>
+      <td>https://pta.trunojoyo.ac.id/welcome/index/21</td>
+      <td>Respon Tanaman Kolesom (Talinum triangulare (J...</td>
+      <td>Penulis : Yeni Novitasari</td>
+      <td>Tanaman kolesom (Talinum. triangulare (Jacq) W...</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>181</th>
+      <td>180.0</td>
+      <td>https://pta.trunojoyo.ac.id/welcome/index/21</td>
+      <td>PENGARUH LINGKUNGAN KERJA FISIK DAN DISIPLIN K...</td>
+      <td>Penulis : Shofya</td>
+      <td>Penelitian ini mengambil objek di PT. Adiluhun...</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>182</th>
+      <td>181.0</td>
+      <td>https://pta.trunojoyo.ac.id/welcome/index/2</td>
+      <td>ANALISIS KANDUNGAN TIMBAL (Pb) UDANG REBON (Ac...</td>
+      <td>Penulis : Roihatul Jannah dan Haryo Triajie</td>
+      <td>Perairan Soccah merupakan lokasi nelayan menca...</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>183</th>
+      <td>182.0</td>
+      <td>https://pta.trunojoyo.ac.id/welcome/index/2</td>
+      <td>Analisis Wacana Media Online Detik.com dalam M...</td>
+      <td>Penulis : RIAN PANDI PRANATA</td>
+      <td>Abstrak\n\n Rian Pandi Pranata. NIM 1605211000...</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>184</th>
+      <td>183.0</td>
+      <td>https://pta.trunojoyo.ac.id/welcome/index/2</td>
+      <td>DETEKSI OBJEK MANUSIA BERBASIS ONE STAGE DETEC...</td>
+      <td>Penulis : Dian Wibowo</td>
+      <td>Topik deteksi objek telah menarik perhatian ya...</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+<p>185 rows × 6 columns</p>
+</div></div></div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="latent-semantic-analysis-lsa">
+<h1>Latent Semantic Analysis (LSA)<a class="headerlink" href="#latent-semantic-analysis-lsa" title="Permalink to this headline">#</a></h1>
+<section id="id1">
+<h2>Definisi<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>LSA (Latent Semantic Analysis) adalah metode statistik aljabar yang mengekstrak struktur semantik yang tersembunyi dari kata dan kalimat , untuk mencari interelasi diantara kalimat dan kata, digunakan metode aljabar Singular Value Decomposition (SVD). Disamping mempunyai kapasitas relasi model diantara kata dan kalimat, SVD ini mempunyai kapasitas reduksi noise yang membantu untuk meningkatkan akurasi.</p>
+</section>
+<section id="id2">
+<h2>Implementasi Dalam Program<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">TruncatedSVD</span>
+<span class="n">lsa_model</span> <span class="o">=</span> <span class="n">TruncatedSVD</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s1">&#39;randomized&#39;</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="n">lsa_top</span><span class="o">=</span><span class="n">lsa_model</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">vect_text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Kami menggunakan library sklearn untuk melakukan topic modeling  dan mencari 10 topic terbaik</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="o">=</span><span class="n">lsa_top</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Document 0 :&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">topic</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Topic &quot;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot; : &quot;</span><span class="p">,</span><span class="n">topic</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Document 0 :
+Topic  0  :  -2.293486471704641e-05
+Topic  1  :  -0.003931958428533484
+Topic  2  :  -0.5867042182455613
+Topic  3  :  -0.2161587533973163
+Topic  4  :  -2.5083431169423873
+Topic  5  :  -0.5274019854776059
+Topic  6  :  2.2291817961360127
+Topic  7  :  2.7934332172925505
+Topic  8  :  -4.211927103164996
+Topic  9  :  13.160786499890358
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">lsa_model</span><span class="o">.</span><span class="n">components_</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="c1"># (no_of_topics*no_of_words)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lsa_model</span><span class="o">.</span><span class="n">components_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(10, 976)
+[[ 2.10240955e-04 -2.29348647e-07  4.14865627e-03 ...  6.75257151e-04
+   4.34542292e-04  3.89718843e-03]
+ [ 1.33843095e-03 -3.93195843e-05 -7.31973341e-04 ...  2.34830611e-03
+   3.40910218e-03  3.24234766e-03]
+ [-4.02233296e-03 -5.86704218e-03 -3.18642555e-03 ... -1.08405391e-03
+  -8.28037925e-03 -2.68764587e-02]
+ ...
+ [-1.21283826e-02  2.79343322e-02 -1.02754765e-02 ... -1.74318332e-04
+  -1.13791254e-02 -2.02081628e-02]
+ [-3.68349546e-03 -4.21192710e-02 -2.53772940e-02 ... -1.41109945e-03
+  -1.12884525e-02  1.22685816e-02]
+ [ 1.10091478e-02  1.31607865e-01  1.64186026e-03 ... -5.14595132e-03
+   1.23080793e-02  8.73350872e-02]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># most important words for each topic</span>
+<span class="n">vocab</span> <span class="o">=</span> <span class="n">vect</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">comp</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lsa_model</span><span class="o">.</span><span class="n">components_</span><span class="p">):</span>
+    <span class="n">vocab_comp</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">vocab</span><span class="p">,</span> <span class="n">comp</span><span class="p">)</span>
+    <span class="n">sorted_words</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">vocab_comp</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)[:</span><span class="mi">10</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Topic &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;: &quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">sorted_words</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Topic 0: 
+ilmu sosial studi fakultas program trunojoyo universitas budaya madura sosiologi 
+
+Topic 1: 
+penelitian bertujuan tujuan siswa kerja abstrak kemampuan pengaruh bentuk metode 
+
+Topic 2: 
+siswa kemampuan penelitian berpikir kriti bertujuan global materi pemanasan berbasis 
+
+Topic 3: 
+kerja pengaruh bertujuan lingkungan motivasi siswa efficacy mediator prestasi self 
+
+Topic 4: 
+garam bentuk produksi terbentuk relawan kristal lapisan tahaptahap tipi dimensi 
+
+Topic 5: 
+garam memiliki kemampuan siswa produksi indonesia berpikir kriti hasil salah 
+
+Topic 6: 
+skripsi garam kecamatan kabupaten jombang syariah pengaruh almaslahah assalam bejudul 
+
+Topic 7: 
+desa nelayan kerja hasil pengembangan tujuan acetes rebon udang pendapatan 
+
+Topic 8: 
+menghasilkan pembelajaran medium kelas kabupaten perangkat dasar berbantuan desain grafis 
+
+Topic 9: 
+kedai salah masyarakat abstrac indonesia kopi sampah kerja pengembangan jombang 
+</pre></div>
+</div>
+</div>
+</div>
+<p>hasil diatas merupakan 10 topic terbaik yang ada di data tersebut</p>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='right-next' id="next-link" href="markdown.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Markdown Files</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book Community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
